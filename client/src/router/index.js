@@ -1,15 +1,21 @@
 import Vue from 'vue'
-import Router from 'vue-router'
+import VueRouter from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
+import store from '@/store'
+import types from '@/store/mutation-types'
 
-Vue.use(Router)
+Vue.use(VueRouter)
 
-export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-    }
-  ]
+const routes = [{
+    path: '/',
+    name: 'HelloWorld',
+    component: HelloWorld
+  },
+  ...store.getters[types.GET_ROUTES]
+]
+
+console.log(routes)
+
+export default new VueRouter({
+  routes
 })
