@@ -14,8 +14,6 @@ const routes = [{
   ...store.getters[types.GET_ROUTES]
 ]
 
-console.log(routes)
-
 export default new VueRouter({
   routes
 })
