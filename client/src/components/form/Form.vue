@@ -33,19 +33,6 @@ export default {
       }
     }
 
-    // v-layout을 sub-header로 묶어야함.
-    // children = [
-    //   createElement(
-    //     'iu-sub-header',
-    //     {
-    //       props: {
-    //         text: '펼치기'
-    //       }
-    //     },
-    //     children
-    //   )
-    // ]
-
     return createElement(
       'v-form',
       {
@@ -81,28 +68,7 @@ export default {
                   },
                   children
                 ),
-                // createElement('iu-sub-header', {}, [createElement(
-                //   'v-layout',
-                //   {
-                //     class: {
-                //       row: true,
-                //       wrap: true
-                //     }
-                //   },
-                //   children
-                // )]),
-                createElement('v-card-actions', {}, [
-                  createElement('small', {}, ['*는 필수 입력입니다.']),
-                  createElement('v-spacer', {}),
-                  createElement('iu-button', {
-                    props: {
-                      text: '저장'
-                    },
-                    on: {
-                      onEvent: this.onSave
-                    }
-                  })
-                ])
+                createElement('v-card-actions', {}, this.$slots.default)
               ]
             )
           ]
@@ -124,10 +90,6 @@ export default {
           }
         }
       })
-    },
-    onSave() {
-      console.log('save')
-      this.$emit('onSave')
     }
   }
 }

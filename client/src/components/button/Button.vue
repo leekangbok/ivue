@@ -46,7 +46,6 @@ export default {
         props: {
           disabled: !this.valid,
           color: 'primary',
-          outline: true,
           small: true,
           icon: this.iconOnly
         },

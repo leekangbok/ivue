@@ -4,6 +4,8 @@ import { Box1xcol2 } from './container'
 import SubHeader from './sub-header'
 import Button from './button'
 import Form from './form'
+import Toolbar from './toolbar'
+import Datatable from './data-table'
 
 const components = {
   Test,
@@ -11,7 +13,9 @@ const components = {
   Box1xcol2,
   SubHeader,
   Button,
-  Form
+  Form,
+  Toolbar,
+  Datatable
 }
 
 export function iuComponentsInstall(Vue) {

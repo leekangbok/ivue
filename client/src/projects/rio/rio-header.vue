@@ -1,18 +1,20 @@
 <template>
   <div>
-    <v-parallax :src="backImg"
-      :height="backHeight">
-      <v-layout column
-        align-center
-        justify-center
-        class="white--text">
-        <img :src="innerImg"
-          :height="innerHeight"
-          v-if="innerImg">
-        <h1 class="white--text mb-2 display-1 text-xs-center">믿고 신뢰하는 리오치과</h1>
-        <div class="subheading mb-3 text-xs-center">친절하고 정직한, 환자가 신뢰하는 치과</div>
-      </v-layout>
-    </v-parallax>
+    <v-container>
+      <v-parallax :src="backImg"
+        :height="backHeight">
+        <v-layout column
+          align-center
+          justify-center
+          class="white--text">
+          <img :src="innerImg"
+            :height="innerHeight"
+            v-if="innerImg">
+          <h1 class="white--text mb-2 display-1 text-xs-center">믿고 신뢰하는 리오치과</h1>
+          <div class="subheading mb-3 text-xs-center">친절하고 정직한, 환자가 신뢰하는 치과</div>
+        </v-layout>
+      </v-parallax>
+    </v-container>
 
     <v-container>
       <v-carousel hide-controls
