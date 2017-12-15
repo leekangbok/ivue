@@ -4,6 +4,10 @@ from klein import Klein
 from twisted.internet import _sslverify, reactor
 from twisted.web.static import File
 
+from server.api import api_start
+from server.db import start as db_start
+from server.db import stop as db_stop
+
 _sslverify.platformTrust = lambda: None
 
 app = Klein()
@@ -34,9 +38,14 @@ class ShuttingDown(Exception):
 
 def serve():
     def shutdown():
+        db_stop()
         ShutDown.stop = True
 
     reactor.addSystemEventTrigger('before', 'shutdown', shutdown)
+
+    db_start()
+
+    api_start(app)
 
     port = int(os.environ.get('PORT', 5000))
 
