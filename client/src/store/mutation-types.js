@@ -10,6 +10,7 @@ const WS_WAITALLUSERS_APPEND = 'ws/dental/wait/all/users/append'
 const WS_WAITUSER_WELCOME_GET = 'ws/dental/wait/welcome/get'
 const WS_WAITUSER_WELCOME_SET = 'ws/dental/wait/welcome/set'
 const WS_WAITUSER_CURRENT_GET = 'ws/dental/wait/current'
+const GET_DOCTOR_MEMBERS = 'DOCTOR/MEMBERS'
 
 export default {
   GET_SIDEBAR_MENU,
@@ -23,5 +24,6 @@ export default {
   WS_WAITALLUSERS_APPEND,
   WS_WAITUSER_WELCOME_GET,
   WS_WAITUSER_WELCOME_SET,
-  WS_WAITUSER_CURRENT_GET
+  WS_WAITUSER_CURRENT_GET,
+  GET_DOCTOR_MEMBERS
 }

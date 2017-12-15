@@ -6,6 +6,7 @@ import Button from './button'
 import Form from './form'
 import Toolbar from './toolbar'
 import Datatable from './data-table'
+import Searchbox from './searchbox'
 
 const components = {
   Test,
@@ -15,7 +16,8 @@ const components = {
   Button,
   Form,
   Toolbar,
-  Datatable
+  Datatable,
+  Searchbox
 }
 
 export function iuComponentsInstall(Vue) {

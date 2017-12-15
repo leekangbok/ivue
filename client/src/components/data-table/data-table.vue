@@ -1,5 +1,5 @@
 <template>
-  <v-card flat>
+  <v-container>
     <slot></slot>
     <v-data-table :headers="headers"
       :items="items"
@@ -53,7 +53,7 @@
         </tr>
       </template>
     </v-data-table>
-  </v-card>
+  </v-container>
 </template>
 
 <script>

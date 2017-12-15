@@ -14,10 +14,12 @@ const python = {
   component: lazyloading('blog/python')
 }
 
-export default [{
-  text: '블로그',
-  icon: 'rss_feed',
-  pri: 100,
-  model: false,
-  children: [bitcoin, python]
-}]
+export default [
+  {
+    text: '블로그',
+    icon: 'rss_feed',
+    pri: 100,
+    model: false,
+    children: [bitcoin, python]
+  }
+]

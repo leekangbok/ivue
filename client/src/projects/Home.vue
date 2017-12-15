@@ -1,15 +1,15 @@
 <template>
   <v-app>
-    <v-container>
-      <iu-datatable :headers="headers"
-        :items="records"
-        :serverSide="false"
-        :selectable="false">
-        <iu-toolbar>
-          <iu-button text="추가"></iu-button>
-        </iu-toolbar>
-      </iu-datatable>
-    </v-container>
+    <iu-datatable :headers="headers"
+      :items="records"
+      :serverSide="false"
+      :selectable="false"
+      :search="search">
+      <iu-toolbar>
+        <iu-searchbox v-model="search"></iu-searchbox>
+        <iu-button text="추가"></iu-button>
+      </iu-toolbar>
+    </iu-datatable>
     <!-- <iu-form :items="items">
       <small>*는 필수 입력입니다.</small>
       <v-spacer></v-spacer>
@@ -25,11 +25,14 @@
 <script>
 import Rio from '@/projects/rio/Rio'
 import Layout from '@/projects/example/layout'
+import Types from '@/store/mutation-types'
+import { mapActions } from 'vuex'
 
 export default {
   name: 'HelloWorld',
   data() {
     return {
+      search: '',
       headers: [
         {
           text: 'Dessert (100g serving)',
@@ -47,8 +50,17 @@ export default {
         {
           sortable: false,
           render(createElement, params) {
-            console.log(params)
-            return createElement('iu-button', { props: { text: '삭제' } })
+            // return createElement('iu-button', {
+            //       props: { text: '수정', classes: { 'ma-1': true, 'pa-0': true } }
+            //     })
+            return createElement('div', {}, [
+              createElement('iu-button', {
+                props: { text: '수정', classes: { 'ma-1': true, 'pa-0': true } }
+              }),
+              createElement('iu-button', {
+                props: { text: '삭제', classes: { 'ma-1': true, 'pa-0': true } }
+              })
+            ])
           }
         }
         // {
@@ -214,7 +226,13 @@ export default {
   methods: {
     onSave() {
       console.log(this.items)
-    }
+    },
+    ...mapActions({
+      getDoctorMembers: Types.GET_DOCTOR_MEMBERS
+    })
+  },
+  mounted() {
+    this.getDoctorMembers().then(response => console.log(response))
   }
 }
 </script>

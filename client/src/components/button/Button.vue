@@ -14,7 +14,18 @@ export default {
       default: 'onEvent'
     },
     icon: Boolean,
-    iconOnly: Boolean
+    iconOnly: Boolean,
+    outline: Boolean,
+    color: {
+      type: String,
+      default: 'primary'
+    },
+    classes: {
+      type: Object,
+      default() {
+        return {}
+      }
+    }
   },
   render(createElement) {
     let children = []
@@ -43,10 +54,12 @@ export default {
     return createElement(
       'v-btn',
       {
+        class: this.classes,
         props: {
           disabled: !this.valid,
-          color: 'primary',
+          color: this.color,
           small: true,
+          outline: this.outline,
           icon: this.iconOnly
         },
         on: {
