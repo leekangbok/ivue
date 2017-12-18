@@ -9,7 +9,7 @@ export default {
       default: null
     }
   },
-  render: (createElement, ctx) => {
+  render(createElement, ctx) {
     const params = {
       row: ctx.props.row
     }

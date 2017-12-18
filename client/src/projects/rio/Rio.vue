@@ -1,44 +1,42 @@
 <template>
-  <v-app>
-    <v-container app>
-      <v-content>
-        <v-container>
-          <iu-box1xcol2 class="align-center">
-            <v-card flat
-              slot="left">
-              <v-card-media src="src/assets/서울봄빛치과-로고최종-1030x316.png"
-                contain
-                height="150">
-              </v-card-media>
-            </v-card>
-            <v-card light
-              flat
-              slot="col1">
-              <v-card-title primary-title>
-                <h3 class="title mb-0 indigo--text text--accent-4">
-                  태어나서 첫 치과. 자연치아를 소중히 하는 치과. 안녕하세요. 리오치과 입니다.
-                </h3>
-              </v-card-title>
-            </v-card>
-            <iu-tabs :items="items"
-              :expand="true"
-              :slider="{color:'orange'}"
-              @onEvent="tabChanged"
-              slot="col2"></iu-tabs>
-          </iu-box1xcol2>
-        </v-container>
-        <section>
-          <RioHeader v-bind="{backImg: 'src/assets/a.jpg', backHeight: 900}"></RioHeader>
-        </section>
-        <section>
-          <RioBody></RioBody>
-        </section>
-        <section>
-          <RioFooter></RioFooter>
-        </section>
-      </v-content>
-    </v-container>
-  </v-app>
+  <v-container>
+    <v-content>
+      <v-container>
+        <iu-box1xcol2 class="align-center">
+          <v-card flat
+            slot="left">
+            <v-card-media src="src/assets/서울봄빛치과-로고최종-1030x316.png"
+              contain
+              height="150">
+            </v-card-media>
+          </v-card>
+          <v-card light
+            flat
+            slot="col1">
+            <v-card-title primary-title>
+              <h3 class="title mb-0 primary--text text--accent-4">
+                <strong>땡땡땡 리오치과</strong>
+              </h3>
+            </v-card-title>
+          </v-card>
+          <iu-tabs :items="items"
+            :expand="true"
+            :slider="{color:'orange'}"
+            @onEvent="tabChanged"
+            slot="col2"></iu-tabs>
+        </iu-box1xcol2>
+      </v-container>
+      <section>
+        <RioHeader v-bind="{backImg: 'src/assets/a.jpg', backHeight: 900}"></RioHeader>
+      </section>
+      <section>
+        <RioBody></RioBody>
+      </section>
+      <section>
+        <RioFooter></RioFooter>
+      </section>
+    </v-content>
+  </v-container>
 </template>
 
 <script>
