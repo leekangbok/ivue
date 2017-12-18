@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <iu-datatable :headers="headers"
+    <!-- <iu-datatable :headers="headers"
       :items="records"
       :serverSide="false"
       :selectable="false"
@@ -9,12 +9,14 @@
         <iu-searchbox v-model="search"></iu-searchbox>
         <iu-button text="추가"></iu-button>
       </iu-toolbar>
-    </iu-datatable>
-    <!-- <iu-form :items="items">
-      <small>*는 필수 입력입니다.</small>
-      <v-spacer></v-spacer>
-      <iu-button text="저장"></iu-button>
-    </iu-form> -->
+    </iu-datatable> -->
+    <v-container>
+      <iu-form :items="items">
+        <small>*는 필수 입력입니다.</small>
+        <v-spacer></v-spacer>
+        <iu-button text="저장"></iu-button>
+      </iu-form>
+    </v-container>
     <!-- <Layout></Layout> -->
     <!-- <Rio></Rio> -->
     <!-- <iu-button></iu-button> -->
@@ -27,6 +29,7 @@ import Rio from '@/projects/rio/Rio'
 import Layout from '@/projects/example/layout'
 import Types from '@/store/mutation-types'
 import { mapActions } from 'vuex'
+import { Form } from '@/utils/form'
 
 export default {
   name: 'HelloWorld',
@@ -193,21 +196,54 @@ export default {
           iron: '6%'
         }
       ],
+      form: new Form({
+        name: ''
+      }),
       items: [
         {
-          members: [
-            { type: 'textfield', label: '이름', model: '', field: 'name' },
-            { type: 'textfield', label: '학교', model: '', field: 'school' },
-            { type: 'textfield', label: '집주소', model: '', field: 'address' }
+          expand: '개인 정보',
+          group: [
+            {
+              type: 'textfield',
+              label: '이름',
+              model: '',
+              field: 'name',
+              classes: {
+                xs12: true
+              }
+            },
+            {
+              type: 'textfield',
+              label: '학교',
+              model: '',
+              field: 'school',
+              classes: {
+                xs12: true
+              }
+            },
+            {
+              type: 'textfield',
+              label: '집주소',
+              model: '',
+              field: 'address',
+              classes: {
+                xs12: true
+              }
+            }
           ]
         },
         {
-          members: [
-            { type: 'textfield', label: '집주소', model: '', field: 'address' }
+          group: [
+            {
+              type: 'textfield',
+              label: '집주소',
+              model: '',
+              field: 'address'
+            }
           ]
         },
         {
-          members: [
+          group: [
             {
               type: 'textfield',
               label: '학교주소',
@@ -232,7 +268,7 @@ export default {
     })
   },
   mounted() {
-    this.getDoctorMembers().then(response => console.log(response))
+    // this.getDoctorMembers().then(response => console.log(response))
   }
 }
 </script>

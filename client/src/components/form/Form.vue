@@ -10,68 +10,109 @@ export default {
     }
   },
   render(createElement) {
-    let children = []
+    let childs = []
 
     for (let item of this.items) {
-      for (let member of item.members) {
+      let elements = []
+      for (let member of item.group) {
         let element = null
         if (member.type === 'textfield') {
           element = this.createTextField(member)
         }
-        children.push(
+        elements.push(
           createElement(
             'v-flex',
             {
               class: {
-                xs12: true,
-                [`sm${12 / item.members.length}`]: true
+                ...member.classes
               }
             },
             [element]
           )
         )
       }
+
+      let element = createElement(
+        'v-layout',
+        {
+          class: {
+            row: true,
+            wrap: true
+          }
+        },
+        elements
+      )
+
+      if (item.expand) {
+        childs.push(
+          createElement(
+            'iu-sub-header',
+            {
+              props: {
+                text: item.expand
+              }
+            },
+            [element]
+          )
+        )
+      } else {
+        childs.push(element)
+      }
     }
 
-    return createElement(
-      'v-form',
+    let form = createElement(
+      'v-card',
       {
         props: {
-          value: this.valid
+          flat: true
         }
       },
       [
         createElement(
-          'v-container',
+          'v-form',
           {
-            class: {
-              fluid: this.fluid,
-              'grid-list-lg': true
+            props: {
+              value: this.valid
             }
           },
           [
             createElement(
-              'v-card',
+              'v-container',
               {
-                props: {
-                  flat: true
+                class: {
+                  fluid: this.fluid,
+                  'grid-list-lg': true
                 }
               },
               [
-                createElement(
-                  'v-layout',
-                  {
-                    class: {
-                      row: true,
-                      wrap: true
-                    }
-                  },
-                  children
-                ),
+                ...childs,
                 createElement('v-card-actions', {}, this.$slots.default)
               ]
             )
           ]
+        )
+      ]
+    )
+
+    return createElement(
+      'v-layout',
+      {
+        class: {
+          'justify-center': true
+        }
+      },
+      [
+        createElement(
+          'v-flex',
+          {
+            class: {
+              xs12: true,
+              sm10: true,
+              md8: true,
+              lg6: true
+            }
+          },
+          [form]
         )
       ]
     )
