@@ -21,7 +21,7 @@ export default {
   props: ['text'],
   data() {
     return {
-      show: true
+      show: false
     }
   },
   computed: {

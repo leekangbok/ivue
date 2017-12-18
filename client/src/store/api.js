@@ -1,10 +1,9 @@
 import axios from 'axios'
 
 export default {
-  get(url, { request = {}, callback = () => {}, errback = () => {} } = {}) {
+  request(method, url, config = {}, callback = () => {}, errback = () => {}) {
     return new Promise((resolve, reject) => {
-      axios
-        .get(url, request)
+      axios[method](url, config)
         .then(response => {
           callback(response)
           resolve(response)
@@ -15,10 +14,10 @@ export default {
         })
     })
   },
-  post(url, { request = {}, callback = () => {}, errback = () => {} } = {}) {
+  get(url, config = {}, callback = () => {}, errback = () => {}) {
     return new Promise((resolve, reject) => {
       axios
-        .post(url, request)
+        .get(url, config)
         .then(response => {
           callback(response)
           resolve(response)
@@ -29,10 +28,10 @@ export default {
         })
     })
   },
-  put(url, { request = {}, callback = () => {}, errback = () => {} } = {}) {
+  post(url, config = {}, callback = () => {}, errback = () => {}) {
     return new Promise((resolve, reject) => {
       axios
-        .put(url, request)
+        .post(url, config)
         .then(response => {
           callback(response)
           resolve(response)
@@ -43,10 +42,24 @@ export default {
         })
     })
   },
-  delete(url, { request = {}, callback = () => {}, errback = () => {} } = {}) {
+  put(url, config = {}, callback = () => {}, errback = () => {}) {
     return new Promise((resolve, reject) => {
       axios
-        .delete(url, request)
+        .put(url, config)
+        .then(response => {
+          callback(response)
+          resolve(response)
+        })
+        .catch(error => {
+          errback(error)
+          reject(error)
+        })
+    })
+  },
+  delete(url, config = {}, callback = () => {}, errback = () => {}) {
+    return new Promise((resolve, reject) => {
+      axios
+        .delete(url, config)
         .then(response => {
           callback(response)
           resolve(response)

@@ -9,7 +9,7 @@ const getters = {}
 
 const actions = {
   [Types.GET_DOCTOR_MEMBERS]({ commit }) {
-    return api.get('/api/doctor/member')
+    return api.request('get', '/api/doctor/member')
   }
 }
 
