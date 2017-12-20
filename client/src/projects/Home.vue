@@ -1,16 +1,21 @@
 <template>
   <!-- <v-app> -->
   <v-container fluid>
-    <iu-datatable :headers="headers"
-      :items="records"
-      :serverSide="false"
-      :selectable="false"
-      :search="search">
-      <iu-toolbar>
-        <iu-searchbox v-model="search"></iu-searchbox>
-        <iu-button text="추가"></iu-button>
-      </iu-toolbar>
-    </iu-datatable>
+    <v-layout justify-center>
+      <v-flex xs12
+        sm6>
+        <iu-datatable :headers="headers"
+          :items="records"
+          :serverSide="false"
+          :selectable="false"
+          :search="search">
+          <iu-toolbar>
+            <iu-searchbox v-model="search"></iu-searchbox>
+            <iu-button text="추가"></iu-button>
+          </iu-toolbar>
+        </iu-datatable>
+      </v-flex>
+    </v-layout>
     <!-- <iu-form :items="items">
       <small>*는 필수 입력입니다.</small>
       <v-spacer></v-spacer>
