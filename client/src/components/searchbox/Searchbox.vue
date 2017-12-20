@@ -2,26 +2,22 @@
   <v-card-title>
     <v-text-field :max="max"
       autofocus
-      append-icon="cancel"
+      append-icon="delete"
       single-line
       hide-details
       :value="value"
       :label="label"
       @input="n => $emit('input', n)"
-      :append-icon-cb="onCancel"
+      :append-icon-cb="onClose"
       @keyup.enter="() => $emit(targetEvent, 'enter')"
-      loading
-      light
+      :color="color"
       v-if="show">
-      <v-progress-linear slot="progress"
-        :value="progress"
-        height="3"
-        :color="color"></v-progress-linear>
     </v-text-field>
     <iu-button text="search"
       icon
       iconOnly
-      color=""
+      :color="color"
+      flat
       @onEvent="show = !show"
       v-if="!show"></iu-button>
   </v-card-title>
@@ -45,6 +41,10 @@ export default {
     label: {
       type: String,
       default: ''
+    },
+    color: {
+      type: String,
+      default: 'primary'
     }
   },
   data() {
@@ -52,18 +52,10 @@ export default {
       show: false
     }
   },
-  computed: {
-    progress() {
-      return Math.min(100, this.value.length * 10)
-    },
-    color() {
-      return ['primary'][Math.floor(this.progress / 40)]
-    }
-  },
   methods: {
-    onCancel() {
+    onClose() {
       this.show = !this.show
-      this.$emit(this.targetEvent, 'cancel')
+      this.$emit(this.targetEvent, 'close')
     }
   }
 }

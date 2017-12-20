@@ -25,7 +25,8 @@ export default {
       default() {
         return {}
       }
-    }
+    },
+    flat: Boolean
   },
   render(createElement) {
     let children = []
@@ -56,6 +57,7 @@ export default {
       {
         class: this.classes,
         props: {
+          flat: this.flat,
           disabled: !this.valid,
           color: this.color,
           small: true,
