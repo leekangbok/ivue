@@ -65,16 +65,11 @@ export default {
           icon: this.iconOnly
         },
         on: {
-          click: this.onClick
+          click: () => this.$emit(this.targetEvent)
         }
       },
       children
     )
-  },
-  methods: {
-    onClick() {
-      this.$emit(this.targetEvent)
-    }
   }
 }
 </script>

@@ -21,9 +21,3 @@ export default {
   }
 }
 </script>
-
-<style>
-/* .toolbar__content {
-  padding-right: 25px;
-} */
-</style>
