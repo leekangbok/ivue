@@ -5,8 +5,8 @@ export default {
     row: Object,
     render: Function,
     column: {
-      type: Object,
-      default: null
+      type: String,
+      default: ''
     }
   },
   render(createElement, ctx) {

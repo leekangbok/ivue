@@ -1,30 +1,30 @@
 <template>
   <!-- <v-app> -->
-  <!-- <v-container fluid> -->
-  <!-- <iu-datatable :headers="headers"
-        :items="records"
-        :serverSide="false"
-        :selectable="false"
-        :search="search">
-        <iu-toolbar>
-          <iu-searchbox v-model="search"></iu-searchbox>
-          <iu-button text="추가"></iu-button>
-        </iu-toolbar>
-      </iu-datatable> -->
-  <!-- <iu-form :items="items">
+  <v-container fluid>
+    <iu-datatable :headers="headers"
+      :items="records"
+      :serverSide="false"
+      :selectable="false"
+      :search="search">
+      <iu-toolbar>
+        <iu-searchbox v-model="search"></iu-searchbox>
+        <iu-button text="추가"></iu-button>
+      </iu-toolbar>
+    </iu-datatable>
+    <!-- <iu-form :items="items">
       <small>*는 필수 입력입니다.</small>
       <v-spacer></v-spacer>
       <iu-button text="저장"></iu-button>
     </iu-form> -->
-  <!-- <Layout></Layout> -->
-  <Rio></Rio>
-  <!-- <iu-button></iu-button> -->
-  <!-- <iu-sub-header text="펼치기"></iu-sub-header> -->
-  <!-- <div class="row-container">
+    <!-- <Layout></Layout> -->
+    <!-- <Rio></Rio> -->
+    <!-- <iu-button></iu-button> -->
+    <!-- <iu-sub-header text="펼치기"></iu-sub-header> -->
+    <!-- <div class="row-container">
       <p>hi</p>
       <p>world</p>
     </div> -->
-  <!-- </v-container> -->
+  </v-container>
   <!-- </v-app> -->
 </template>
 
@@ -44,7 +44,26 @@ export default {
           text: 'Dessert (100g serving)',
           align: 'left',
           sortable: false,
-          value: 'name'
+          value: 'name',
+          render: (createElement, params) => {
+            return createElement('h4', [
+              createElement(
+                'a',
+                {
+                  attrs: {
+                    name: 'abc',
+                    href: '#abc'
+                  },
+                  on: {
+                    click: () => {
+                      this.clickHandler(params.row)
+                    }
+                  }
+                },
+                params.column
+              )
+            ])
+          }
         },
         { text: 'Calories', value: 'calories' },
         { text: 'Fat (g)', value: 'fat' },
@@ -52,23 +71,23 @@ export default {
         { text: 'Protein (g)', value: 'protein' },
         { text: 'Sodium (mg)', value: 'sodium' },
         { text: 'Calcium (%)', value: 'calcium' },
-        { text: 'Iron (%)', value: 'iron' },
-        {
-          sortable: false,
-          render(createElement, params) {
-            // return createElement('iu-button', {
-            //       props: { text: '수정', classes: { 'ma-1': true, 'pa-0': true } }
-            //     })
-            return createElement('div', [
-              createElement('iu-button', {
-                props: { text: '수정', classes: { 'ma-1': true, 'pa-0': true } }
-              }),
-              createElement('iu-button', {
-                props: { text: '삭제', classes: { 'ma-1': true, 'pa-0': true } }
-              })
-            ])
-          }
-        }
+        { text: 'Iron (%)', value: 'iron' }
+        // {
+        //   sortable: false,
+        //   render(createElement, params) {
+        //     // return createElement('iu-button', {
+        //     //       props: { text: '수정', classes: { 'ma-1': true, 'pa-0': true } }
+        //     //     })
+        //     return createElement('div', [
+        //       createElement('iu-button', {
+        //         props: { text: '수정', classes: { 'ma-1': true, 'pa-0': true } }
+        //       }),
+        //       createElement('iu-button', {
+        //         props: { text: '삭제', classes: { 'ma-1': true, 'pa-0': true } }
+        //       })
+        //     ])
+        //   }
+        // }
         // {
         //   sortable: false,
         //   components: [
@@ -235,7 +254,10 @@ export default {
     },
     ...mapActions({
       getDoctorMembers: Types.GET_DOCTOR_MEMBERS
-    })
+    }),
+    clickHandler(row) {
+      console.log(row)
+    }
   },
   mounted() {
     // this.getDoctorMembers().then(response => console.log(response))

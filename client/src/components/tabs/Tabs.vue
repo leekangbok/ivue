@@ -10,7 +10,7 @@
         v-for="(item, i) in items"
         :key="i"
         :href="`${id}` + i">
-        <strong>{{ item.text }}</strong>
+        {{ item.text }}
       </v-tabs-item>
     </v-tabs-bar>
   </v-tabs>
@@ -62,3 +62,11 @@ export default {
   }
 }
 </script>
+
+<style>
+
+.tabs__li {
+  font-weight: bold;
+}
+
+</style>
