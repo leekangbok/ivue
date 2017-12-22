@@ -1,31 +1,29 @@
 <template>
-  <!-- <v-app> -->
-  <!-- <v-container fluid> -->
-  <!-- <iu-datatable :headers="headers"
-        :items="records"
-        :serverSide="false"
-        :selectable="false"
-        :search="search">
-        <iu-toolbar>
-          <iu-searchbox v-model="search"></iu-searchbox>
-          <iu-button text="추가"></iu-button>
-        </iu-toolbar>
-      </iu-datatable> -->
-  <!-- <iu-form :items="items">
+  <v-container fluid>
+    <iu-datatable :headers="headers"
+      :items="records"
+      :serverSide="false"
+      :selectable="false"
+      :search="search">
+      <iu-toolbar>
+        <iu-searchbox v-model="search"></iu-searchbox>
+        <iu-button text="추가"></iu-button>
+      </iu-toolbar>
+    </iu-datatable>
+    <!-- <iu-form :items="items">
       <small>*는 필수 입력입니다.</small>
       <v-spacer></v-spacer>
       <iu-button text="저장"></iu-button>
     </iu-form> -->
-  <!-- <Layout></Layout> -->
-  <Rio></Rio>
-  <!-- <iu-button></iu-button> -->
-  <!-- <iu-sub-header text="펼치기"></iu-sub-header> -->
-  <!-- <div class="row-container">
+    <!-- <Layout></Layout> -->
+    <!-- <Rio></Rio> -->
+    <!-- <iu-button></iu-button> -->
+    <!-- <iu-sub-header text="펼치기"></iu-sub-header> -->
+    <!-- <div class="row-container">
       <p>hi</p>
       <p>world</p>
     </div> -->
-  <!-- </v-container> -->
-  <!-- </v-app> -->
+  </v-container>
 </template>
 
 <script>
@@ -55,10 +53,11 @@ export default {
         { text: 'Iron (%)', value: 'iron' },
         {
           sortable: false,
+          text: '액션',
           render(createElement, params) {
-            // return createElement('iu-button', {
-            //       props: { text: '수정', classes: { 'ma-1': true, 'pa-0': true } }
-            //     })
+            //   return createElement('iu-button', {
+            //     props: { text: '수정', classes: { 'ma-0': true, 'pa-0': true } }
+            //   })
             return createElement('div', [
               createElement('iu-button', {
                 props: { text: '수정', classes: { 'ma-1': true, 'pa-0': true } }
@@ -242,11 +241,3 @@ export default {
   }
 }
 </script>
-
-
-<style>
-.row-container {
-  display: flex;
-  flex-flow: row;
-}
-</style>

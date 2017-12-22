@@ -7,7 +7,9 @@ import AppAdmin from './AppAdmin'
 import store from './store'
 import router from './router'
 import axios from 'axios'
-import { iuComponentsInstall } from './components'
+import {
+  iuComponentsInstall
+} from './components'
 
 import ('vuetify/dist/vuetify.min.css')
 
