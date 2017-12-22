@@ -6,17 +6,13 @@ import App from './App'
 import AppAdmin from './AppAdmin'
 import store from './store'
 import router from './router'
-import axios from 'axios'
-import {
-  iuComponentsInstall
-} from './components'
+import Iu from './components'
 
-import ('vuetify/dist/vuetify.min.css')
+import('vuetify/dist/vuetify.min.css')
 
 Vue.use(Vuetify)
-iuComponentsInstall(Vue)
 
-Vue.prototype.$http = axios
+Vue.use(Iu)
 
 Vue.config.productionTip = false
 

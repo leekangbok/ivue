@@ -3,14 +3,12 @@
     wrap>
     <v-flex d-flex
       xs12
-      sm3
-      md3>
+      sm3>
       <slot name="left"></slot>
     </v-flex>
     <v-flex d-flex
       xs12
-      sm9
-      md9>
+      sm9>
       <v-layout row
         wrap>
         <v-flex d-flex

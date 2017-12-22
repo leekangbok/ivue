@@ -23,7 +23,8 @@
             :expand="true"
             :slider="{color:'orange'}"
             @onEvent="tabChanged"
-            slot="col2"></iu-tabs>
+            slot="col2"
+            activeClass="orange lighten-4"></iu-tabs>
         </iu-box1xcol2>
       </v-container>
       <section>

@@ -1,15 +1,21 @@
 <template>
+  <!-- <v-app> -->
   <v-container fluid>
-    <iu-datatable :headers="headers"
-      :items="records"
-      :serverSide="false"
-      :selectable="false"
-      :search="search">
-      <iu-toolbar>
-        <iu-searchbox v-model="search"></iu-searchbox>
-        <iu-button text="추가"></iu-button>
-      </iu-toolbar>
-    </iu-datatable>
+    <v-layout justify-center>
+      <v-flex xs12
+        sm6>
+        <iu-datatable :headers="headers"
+          :items="records"
+          :serverSide="false"
+          :selectable="false"
+          :search="search">
+          <iu-toolbar>
+            <iu-searchbox v-model="search"></iu-searchbox>
+            <iu-button text="추가"></iu-button>
+          </iu-toolbar>
+        </iu-datatable>
+      </v-flex>
+    </v-layout>
     <!-- <iu-form :items="items">
       <small>*는 필수 입력입니다.</small>
       <v-spacer></v-spacer>
@@ -24,6 +30,7 @@
       <p>world</p>
     </div> -->
   </v-container>
+  <!-- </v-app> -->
 </template>
 
 <script>
@@ -42,7 +49,26 @@ export default {
           text: 'Dessert (100g serving)',
           align: 'left',
           sortable: false,
-          value: 'name'
+          value: 'name',
+          render: (createElement, params) => {
+            return createElement('h4', [
+              createElement(
+                'a',
+                {
+                  attrs: {
+                    name: 'abc',
+                    href: '#abc'
+                  },
+                  on: {
+                    click: () => {
+                      this.clickHandler(params.row)
+                    }
+                  }
+                },
+                params.column
+              )
+            ])
+          }
         },
         { text: 'Calories', value: 'calories' },
         { text: 'Fat (g)', value: 'fat' },
@@ -50,24 +76,23 @@ export default {
         { text: 'Protein (g)', value: 'protein' },
         { text: 'Sodium (mg)', value: 'sodium' },
         { text: 'Calcium (%)', value: 'calcium' },
-        { text: 'Iron (%)', value: 'iron' },
-        {
-          sortable: false,
-          text: '액션',
-          render(createElement, params) {
-            //   return createElement('iu-button', {
-            //     props: { text: '수정', classes: { 'ma-0': true, 'pa-0': true } }
-            //   })
-            return createElement('div', [
-              createElement('iu-button', {
-                props: { text: '수정', classes: { 'ma-1': true, 'pa-0': true } }
-              }),
-              createElement('iu-button', {
-                props: { text: '삭제', classes: { 'ma-1': true, 'pa-0': true } }
-              })
-            ])
-          }
-        }
+        { text: 'Iron (%)', value: 'iron' }
+        // {
+        //   sortable: false,
+        //   render(createElement, params) {
+        //     // return createElement('iu-button', {
+        //     //       props: { text: '수정', classes: { 'ma-1': true, 'pa-0': true } }
+        //     //     })
+        //     return createElement('div', [
+        //       createElement('iu-button', {
+        //         props: { text: '수정', classes: { 'ma-1': true, 'pa-0': true } }
+        //       }),
+        //       createElement('iu-button', {
+        //         props: { text: '삭제', classes: { 'ma-1': true, 'pa-0': true } }
+        //       })
+        //     ])
+        //   }
+        // }
         // {
         //   sortable: false,
         //   components: [
@@ -234,10 +259,21 @@ export default {
     },
     ...mapActions({
       getDoctorMembers: Types.GET_DOCTOR_MEMBERS
-    })
+    }),
+    clickHandler(row) {
+      console.log(row)
+    }
   },
   mounted() {
     // this.getDoctorMembers().then(response => console.log(response))
   }
 }
 </script>
+
+
+<style>
+.row-container {
+  display: flex;
+  flex-flow: row;
+}
+</style>

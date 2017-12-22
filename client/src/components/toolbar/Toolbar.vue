@@ -1,8 +1,8 @@
 <template>
   <v-toolbar flat
     :color="color">
-    <v-spacer v-for="i of spacer"
-      :key="i"></v-spacer>
+    <v-spacer v-for="index of spacer"
+      :key="index"></v-spacer>
     <slot></slot>
   </v-toolbar>
 </template>
@@ -18,15 +18,6 @@ export default {
       type: String,
       default: 'white'
     }
-  },
-  data() {
-    return {}
   }
 }
 </script>
-
-<style>
-.toolbar__content {
-  padding-right: 25px;
-}
-</style>
