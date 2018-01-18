@@ -9,7 +9,7 @@ import Toolbar from './toolbar'
 import Datatable from './data-table'
 import Searchbox from './searchbox'
 import Parallax from './parallax'
-import C3 from './C3'
+import C3 from './c3'
 import Searchbox2 from './searchbox2'
 
 const components = {

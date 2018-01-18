@@ -3,7 +3,7 @@
 import Vue from 'vue'
 import Vuetify from 'vuetify'
 import App from './App'
-import AppAdmin from './AppAdmin'
+import AppShop from './AppShop'
 import store from './store'
 import router from './router'
 import Iu from './components'
@@ -21,9 +21,9 @@ new Vue({
   el: '#app',
   router,
   store,
-  template: '<AppAdmin/>',
+  template: '<AppShop/>',
   components: {
     App,
-    AppAdmin
+    AppShop
   }
 })
