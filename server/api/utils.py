@@ -1,5 +1,5 @@
 from decorator import decorator
-from twisted.web.server import Request as TwistedWebRequest
+from twisted.web.server import Request
 
 
 def _byte_to_str(data):
@@ -18,8 +18,8 @@ def _byte_to_str(data):
 
 
 @decorator
-def refine_twisted_web_request(func, *args, **kwargs):
-    if isinstance(args[0], TwistedWebRequest):
+def transform_tw_req(func, *args, **kwargs):
+    if isinstance(args[0], Request):
         args[0].args = _byte_to_str(args[0].args)
     else:
         args[1].args = _byte_to_str(args[1].args)

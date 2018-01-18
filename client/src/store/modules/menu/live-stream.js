@@ -1,9 +1,9 @@
 import lazyloading from '@/utils/lazyLoading'
 
 export default [{
-  text: '라이브스트리밍',
+  text: '미디어',
   path: '/liveStream',
-  icon: 'view_stream',
+  icon: 'live_tv',
   pri: 301,
   component: lazyloading('liveStream', true)
 }]

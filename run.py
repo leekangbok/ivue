@@ -5,8 +5,8 @@ from twisted.internet import _sslverify, reactor
 from twisted.web.static import File
 
 from server.api import api_start
-from server.db import start as db_start
-from server.db import stop as db_stop
+from server.db import set_dao
+from server.db.sqlite import DBSQLite3
 
 _sslverify.platformTrust = lambda: None
 
@@ -32,18 +32,13 @@ class ShutDown:
     stop = False
 
 
-class ShuttingDown(Exception):
-    pass
-
-
 def serve():
     def shutdown():
-        db_stop()
         ShutDown.stop = True
 
     reactor.addSystemEventTrigger('before', 'shutdown', shutdown)
 
-    db_start()
+    set_dao(DBSQLite3())
 
     api_start(app)
 

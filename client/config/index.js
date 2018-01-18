@@ -13,6 +13,9 @@ module.exports = {
       '/api': {
         target: 'http://localhost:5000/'
       },
+      '/project': {
+        target: 'http://192.168.0.76:1001/'
+      },
       '/ws': {
         target: 'ws://localhost:5000/',
         ws: true

@@ -8,6 +8,9 @@ import Form from './form'
 import Toolbar from './toolbar'
 import Datatable from './data-table'
 import Searchbox from './searchbox'
+import Parallax from './parallax'
+import C3 from './C3'
+import Searchbox2 from './searchbox2'
 
 const components = {
   Test,
@@ -18,7 +21,10 @@ const components = {
   Form,
   Toolbar,
   Datatable,
-  Searchbox
+  Searchbox,
+  Parallax,
+  C3,
+  Searchbox2
 }
 
 function componentsInstall(Vue) {

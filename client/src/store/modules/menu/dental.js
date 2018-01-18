@@ -10,8 +10,7 @@ const intro = {
   text: 'Intro',
   path: '/dental/Intro',
   component: lazyloading('dental/Intro'),
-  children: [
-    {
+  children: [{
       path: 'default',
       component: lazyloading('dental/IntroDefault')
     },
@@ -52,10 +51,9 @@ const takeOver = {
   component: lazyloading('dental/TakeOver')
 }
 
-export default [
-  {
-    text: '오치과',
-    icon: 'fullscreen_exit',
+export default [{
+    text: '병원',
+    icon: 'toc',
     pri: 70,
     model: true,
     children: [intro, takeOver, dashBoard]

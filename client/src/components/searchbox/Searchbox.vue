@@ -11,7 +11,7 @@
       :append-icon-cb="onClose"
       @keyup.enter="() => $emit(targetEvent, 'enter')"
       :color="color"
-      v-if="show">
+      v-if="hiddenActiveSlot || show">
     </v-text-field>
     <iu-button text="search"
       icon
@@ -19,7 +19,7 @@
       :color="color"
       flat
       @onEvent="show = !show"
-      v-if="!show"></iu-button>
+      v-if="!hiddenActiveSlot && !show"></iu-button>
   </v-card-title>
 </template>                                                                                                                                                                                       
                                                                                                                                                                                                   
@@ -45,6 +45,10 @@ export default {
     color: {
       type: String,
       default: 'primary'
+    },
+    hiddenActiveSlot: {
+      type: Boolean,
+      default: false
     }
   },
   data() {
@@ -57,6 +61,7 @@ export default {
       this.show = !this.show
       this.$emit(this.targetEvent, 'close')
     }
-  }
+  },
+  created() {}
 }
 </script>

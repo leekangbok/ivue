@@ -1,41 +1,47 @@
 <template>
-  <!-- <v-app> -->
-  <v-container fluid>
-    <v-layout justify-center>
-      <v-flex xs12
-        sm6>
-        <iu-datatable :headers="headers"
-          :items="records"
-          :serverSide="false"
-          :selectable="false"
-          :search="search">
-          <iu-toolbar>
-            <iu-searchbox v-model="search"></iu-searchbox>
-            <iu-button text="추가"></iu-button>
-          </iu-toolbar>
-        </iu-datatable>
-      </v-flex>
-    </v-layout>
-    <!-- <iu-form :items="items">
+  <!-- <iu-parallax v-bind="{backImg: '/static/main.jpg', backImgHeight: 800, centerText: '나는 뭘 하고있었나', subText: '남들하는거 못따라가고', classes: {'red--text': true}}"></iu-parallax> -->
+  <!-- <v-layout justify-center>
+    <v-flex xs12
+      sm6>
+      <iu-datatable :headers="headers"
+        :items="records"
+        :serverSide="false"
+        :selectable="false"
+        :search="search">
+        <iu-toolbar>
+          <iu-searchbox v-model="search"></iu-searchbox>
+          <iu-button text="추가"></iu-button>
+        </iu-toolbar>
+      </iu-datatable>
+    </v-flex>
+  </v-layout> -->
+  <!-- <iu-form :items="items">
       <small>*는 필수 입력입니다.</small>
       <v-spacer></v-spacer>
       <iu-button text="저장"></iu-button>
     </iu-form> -->
-    <!-- <Layout></Layout> -->
-    <!-- <Rio></Rio> -->
-    <!-- <iu-button></iu-button> -->
-    <!-- <iu-sub-header text="펼치기"></iu-sub-header> -->
-    <!-- <div class="row-container">
+  <!-- <Layout></Layout> -->
+  <!-- <Rio></Rio> -->
+  <!-- <iu-button></iu-button> -->
+  <!-- <iu-sub-header text="펼치기"></iu-sub-header> -->
+  <!-- <div class="row-container">
       <p>hi</p>
       <p>world</p>
     </div> -->
-  </v-container>
-  <!-- </v-app> -->
+  <Edent></Edent>
+  <!-- <v-layout justify-center>
+    <v-flex xs12
+      sm8>
+      <Coin :options="options"></Coin>
+    </v-flex>
+  </v-layout> -->
 </template>
 
 <script>
 import Rio from '@/projects/rio/Rio'
 import Layout from '@/projects/example/layout'
+import Edent from '@/projects/edent/edent'
+import Coin from '@/projects/coin/coin'
 import Types from '@/store/mutation-types'
 import { mapActions } from 'vuex'
 
@@ -43,6 +49,11 @@ export default {
   name: 'HelloWorld',
   data() {
     return {
+      options: {
+        data: {
+          columns: [['data1', 2, 4, 1, 5, 2, 1], ['data2', 7, 2, 4, 6, 10, 1]]
+        }
+      },
       search: '',
       headers: [
         {
@@ -251,7 +262,9 @@ export default {
   },
   components: {
     Rio,
-    Layout
+    Layout,
+    Edent,
+    Coin
   },
   methods: {
     onSave() {
@@ -262,18 +275,217 @@ export default {
     }),
     clickHandler(row) {
       console.log(row)
+    },
+    getRandomInt(min, max) {
+      return Math.floor(Math.random() * (max - min)) + min
     }
   },
   mounted() {
     // this.getDoctorMembers().then(response => console.log(response))
+    setInterval(() => {
+      this.$set(this.options, 'data', {
+        columns: [
+          [
+            'data1',
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500)
+          ],
+          [
+            'data2',
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500),
+            this.getRandomInt(10, 500)
+          ]
+        ]
+      })
+    }, 5000)
   }
 }
 </script>
-
-
-<style>
-.row-container {
-  display: flex;
-  flex-flow: row;
-}
-</style>

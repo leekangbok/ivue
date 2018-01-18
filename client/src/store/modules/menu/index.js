@@ -6,6 +6,9 @@ import stock from './stock'
 import customer from './customer'
 import liveStream from './live-stream'
 import home from './home'
+import bitCoin from './bitcoin'
+import qna from './qna'
+import sample from './sample'
 
 function genRoutes(menu = [], routes = []) {
   for (let i = 0, l = menu.length; i < l; i++) {
@@ -22,7 +25,7 @@ function genRoutes(menu = [], routes = []) {
 }
 
 const state = {
-  menus: [...blog, ...dental, ...stock, ...customer, ...liveStream, ...home]
+  menus: [...blog, ...dental, ...stock, ...customer, ...liveStream, ...home, ...bitCoin, ...qna, ...sample]
 }
 
 const mutations = {}

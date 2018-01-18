@@ -24,6 +24,8 @@ module.exports = {
     'space-before-function-paren': 'off',
     'no-useless-escape': 'off',
     'func-call-spacing': 'off',
-    'indent': 'off'
+    'indent': 'off',
+    'quotes': 'off',
+    'no-unused-vars': 'off'
   }
 }

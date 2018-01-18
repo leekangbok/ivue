@@ -1,10 +1,9 @@
 <template>
-  <v-toolbar flat
-    :color="color">
-    <v-spacer v-for="index of spacer"
-      :key="index"></v-spacer>
+  <v-card-actions>
+    <v-spacer v-for="i of spacer"
+      :key="i"></v-spacer>
     <slot></slot>
-  </v-toolbar>
+  </v-card-actions>
 </template>
 
 <script>
@@ -13,10 +12,6 @@ export default {
     spacer: {
       type: Number,
       default: 1
-    },
-    color: {
-      type: String,
-      default: 'white'
     }
   }
 }

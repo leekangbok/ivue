@@ -8,7 +8,7 @@ import store from './store'
 import router from './router'
 import Iu from './components'
 
-import('vuetify/dist/vuetify.min.css')
+import ('vuetify/dist/vuetify.min.css')
 
 Vue.use(Vuetify)
 
@@ -21,7 +21,7 @@ new Vue({
   el: '#app',
   router,
   store,
-  template: '<App/>',
+  template: '<AppAdmin/>',
   components: {
     App,
     AppAdmin

@@ -13,7 +13,7 @@ export default {
       type: String,
       default: 'onEvent'
     },
-    icon: Boolean,
+    icon: String,
     iconOnly: Boolean,
     outline: Boolean,
     color: {
@@ -45,8 +45,9 @@ export default {
               left: true
             }
           },
-          [this.text]
-        )
+          [this.icon]
+        ),
+        this.text
       ]
     } else {
       children = [this.text]

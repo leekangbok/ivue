@@ -27,7 +27,7 @@ object_network_v4	../server/api/object/network/network_v4.py	/^    def object_ne
 object_network_v6	../server/api/object/network/network_v6.py	/^    def object_network_v6(self, request):$/;"	kind:member	line:12
 policy_forward_v4	../server/api/policy/forward/forward_v4.py	/^    def policy_forward_v4(self, request):$/;"	kind:member	line:17
 policy_forward_v6	../server/api/policy/forward/forward_v6.py	/^    def policy_forward_v6(self, request):$/;"	kind:member	line:12
-refine_twisted_web_request	../server/api/utils.py	/^def refine_twisted_web_request(func, *args, **kwargs):$/;"	kind:function	line:21
+transform_tw_req	../server/api/utils.py	/^def transform_tw_req(func, *args, **kwargs):$/;"	kind:function	line:21
 route	../server/api/object/__init__.py	/^def route(app):$/;"	kind:function	line:4
 route	../server/api/object/network/__init__.py	/^def route(app):$/;"	kind:function	line:5
 route	../server/api/object/network/network_v4.py	/^def route(app):$/;"	kind:function	line:17
