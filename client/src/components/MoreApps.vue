@@ -5,6 +5,8 @@
     bottom
     left>
     <v-btn icon
+      small
+      flat
       slot="activator">
       <v-icon>apps</v-icon>
     </v-btn>

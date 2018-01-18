@@ -1,5 +1,7 @@
 <template>
-  <v-btn icon>
+  <v-btn icon
+    small
+    flat>
     <v-badge top
       color="green">
       <span slot="badge">6</span>

@@ -1,12 +1,12 @@
 <template>
-    <v-tabs fixed color="transparent">
-    <v-tabs-bar>
-      <v-tabs-slider></v-tabs-slider>
-      <v-tabs-item
-        v-for="i in items"
+  <v-tabs fixed>
+    <v-tabs-bar dark
+      color="indigo">
+      <v-tabs-slider id="topnav-tabs-slider"
+        color="white"></v-tabs-slider>
+      <v-tabs-item v-for="i in items"
         :key="i"
-        :href="'#tab-' + i"
-      >
+        :href="'#tab-' + i">
         {{ i }}
       </v-tabs-item>
     </v-tabs-bar>
@@ -24,3 +24,9 @@ export default {
   }
 }
 </script>
+
+<style>
+#topnav-tabs-slider {
+  height: 3px;
+}
+</style>

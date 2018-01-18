@@ -87,6 +87,36 @@ export default {
 #inspire {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
+  color: #2c3e50 !important;
+  font-size: 12px !important;
+  font-weight: bold;
+}
+
+.list__tile__title {
+  font-size: 12px !important;
+  font-weight: bold;
+}
+
+.toolbar__title {
+  font-size: 16px !important;
+  font-weight: bold;
+}
+
+.btn--small {
+  font-size: 12px !important;
+  /* height: 24px !important; */
+}
+
+.btn__content {
+  margin-right: 0px !important;
+  margin-left: 0px !important;
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+}
+
+.btn {
+  min-width: 0px !important;
+  padding-left: 5px !important;
+  padding-right: 5px !important;
 }
 </style>
