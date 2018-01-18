@@ -7,22 +7,34 @@
         wrap
         justify-center>
         <v-flex xs12>
-          <ShopTop></ShopTop>
+          <v-card flat>
+          <v-layout row wrap justify-center>
+            <v-flex sm8>
+              <ShopTop></ShopTop>
+            </v-flex>
+          </v-layout>
+          </v-card>
         </v-flex>
         <v-flex xs12>
+          <v-card flat>
+          <v-layout row wrap justify-center>
+            <v-flex sm8>
           <ShopCenter></ShopCenter>
+         </v-flex>
+          </v-layout>
+          </v-card>
         </v-flex>
         <v-flex xs12>
-          <v-card dark
-            color="primary">
-            <v-card-text class="px-0">12</v-card-text>
+          <v-card flat>
+          <v-layout row wrap justify-center>
+            <v-flex sm8>
+          <ShopBottom></ShopBottom>
+        </v-flex>
+          </v-layout>
           </v-card>
         </v-flex>
-        <v-flex sm10>
-          <v-card dark
-            color="secondary">
-            <v-card-text class="px-0">9</v-card-text>
-          </v-card>
+        <v-flex sm8>
+          <ShopContent></ShopContent>
         </v-flex>
       </v-layout>
     </v-container>
@@ -32,11 +44,15 @@
 <script>
 import ShopTop from './components/ShopTop'
 import ShopCenter from './components/ShopCenter'
+import ShopBottom from './components/ShopBottom'
+import ShopContent from './components/ShopContent'
 
 export default {
   components: {
     ShopTop,
-    ShopCenter
+    ShopCenter,
+    ShopBottom,
+    ShopContent
   }
 }
 </script>

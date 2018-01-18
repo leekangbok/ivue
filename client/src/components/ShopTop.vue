@@ -1,20 +1,10 @@
 <template>
-  <v-toolbar height="38px">
-    <div class="d-flex align-center"
-      style="margin-right: auto;padding-left: 13%">
-      <span>Logo</span>
-    </div>
-    <div class="d-flex align-center"
-      style="margin-left: auto;padding-right: 13%">
-      <v-btn icon>
-        <v-icon>apps</v-icon>
-      </v-btn>
-      <v-btn icon>
-        <v-icon>notifications</v-icon>
-      </v-btn>
-      <v-btn icon>
-        <v-icon>account_circle</v-icon>
-      </v-btn>
-    </div>
-  </v-toolbar>
+  <iu-toolbar-nav title="로고를여기에넣는다" height="30px">
+         <div class="d-flex align-center" style="margin-left: auto">
+           <v-btn small outline>로그인</v-btn>
+        <v-btn icon small>
+          <v-icon>apps</v-icon>
+        </v-btn>
+      </div>
+  </iu-toolbar-nav>
 </template>
