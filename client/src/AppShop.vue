@@ -1,40 +1,36 @@
 <template>
   <v-app id="app-shop">
-    <v-container fluid
-      grid-list-sm
-      text-xs-center
-      app>
       <v-layout row
         wrap
         justify-center>
         <v-flex xs12>
           <v-card flat
-            color="primary"
             dark>
-            <v-layout row
-              wrap
-              justify-center>
-              <v-flex xs12
-                md12
-                sm8>
-                <ShopTop></ShopTop>
-              </v-flex>
-            </v-layout>
+            <v-card-media :src="topBgImg">
+              <v-layout row
+                wrap
+                justify-center>
+                <v-flex xs12
+                  sm6 md8>
+                  <ShopTop></ShopTop>
+                </v-flex>
+              </v-layout>
+            </v-card-media>
           </v-card>
         </v-flex>
         <v-flex xs12>
           <v-card flat
-            color="primary"
             dark>
+            <v-card-media :src="topBgImg">
             <v-layout row
               wrap
               justify-center>
               <v-flex xs12
-                md12
-                sm8>
+                sm6 md8>
                 <ShopCenter></ShopCenter>
               </v-flex>
             </v-layout>
+            </v-card-media>
           </v-card>
         </v-flex>
         <v-flex xs12>
@@ -43,20 +39,17 @@
               wrap
               justify-center>
               <v-flex xs12
-                md12
-                sm8>
+                sm6 md8>
                 <ShopBottom></ShopBottom>
               </v-flex>
             </v-layout>
           </v-card>
         </v-flex>
         <v-flex xs12
-          md12
-          sm8>
+          sm6 md8>
           <ShopContent></ShopContent>
         </v-flex>
       </v-layout>
-    </v-container>
   </v-app>
 </template>
 
@@ -67,6 +60,11 @@ import ShopBottom from './components/ShopBottom'
 import ShopContent from './components/ShopContent'
 
 export default {
+  data() {
+    return {
+      topBgImg: 'src/assets/bg2.svg'
+    }
+  },
   components: {
     ShopTop,
     ShopCenter,
@@ -92,17 +90,17 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50 !important;
   font-size: 12px !important;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 .list__tile__title {
   font-size: 12px !important;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 .toolbar__title {
   font-size: 16px !important;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 .btn--small {
@@ -121,5 +119,14 @@ export default {
   min-width: 0px !important;
   padding-left: 5px !important;
   padding-right: 5px !important;
+}
+
+.tabs__item {
+  font-weight: bold !important;
+}
+
+.tabs__item--active {
+  font-size: 13px !important;
+  font-weight: bold !important;
 }
 </style>

@@ -1,9 +1,8 @@
 <template>
   <v-tabs fixed>
-    <v-tabs-bar dark
-      color="indigo">
+    <v-tabs-bar color="transparent">
       <v-tabs-slider id="topnav-tabs-slider"
-        color="white"></v-tabs-slider>
+        color="light-blue accent-2"></v-tabs-slider>
       <v-tabs-item v-for="i in items"
         :key="i"
         :href="'#tab-' + i">

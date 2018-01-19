@@ -1,13 +1,11 @@
 <template>
-  <iu-toolbar-nav searchBox>
-    <template slot="title">
-      <v-icon large>home</v-icon>
+  <iu-toolbar-nav searchBox hiddenTitle>
+      <v-icon large slot="title">home</v-icon>
       <!-- <span class="hidden-xs-only">Dshop</span> -->
-    </template>
-    <!-- <v-avatar size="90px"
+    <!-- <v-avatar size="40px"
           slot="title">
-          <img slot="title" src="src/assets/shopping_search_logo.jpg">
-      </v-avatar> -->
+          <img src="src/assets/search.jpg">
+    </v-avatar> -->
     <div class="d-flex align-center"
       style="margin-left: auto">
       <Notifications></Notifications>

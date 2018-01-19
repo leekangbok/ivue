@@ -94,12 +94,12 @@ export default {
 
 .list__tile__title {
   font-size: 12px !important;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 .toolbar__title {
   font-size: 16px !important;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 .btn--small {
@@ -118,5 +118,14 @@ export default {
   min-width: 0px !important;
   padding-left: 5px !important;
   padding-right: 5px !important;
+}
+
+.tabs__item {
+  font-weight: bold !important;
+}
+
+.tabs__item--active {
+  font-size: 13px !important;
+  font-weight: bold !important;
 }
 </style>

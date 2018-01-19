@@ -21,7 +21,7 @@ new Vue({
   el: '#app',
   router,
   store,
-  template: '<App/>',
+  template: '<AppShop/>',
   components: {
     App,
     AppShop

@@ -6,7 +6,7 @@
         <v-toolbar-side-icon @click.stop="drawer = !drawer"
           v-if="nav"></v-toolbar-side-icon>
         <slot name="title">
-          <span v-if="title.length">{{ title }}</span>
+          <span v-if="title.length" class="enjoy-css">{{ title }}</span>
         </slot>
       </v-toolbar-title>
       <v-text-field prepend-icon="search"
@@ -17,7 +17,8 @@
         light
         :append-icon="search ? 'clear' : ''"
         :append-icon-cb="() => search = ''"
-        style="max-width: 500px; min-width: 130px"
+        class="ml-2"
+        style="max-width: 500px; min-width: 130px;"
         v-if="searchBox"></v-text-field>
       <slot></slot>
       <v-tabs-bar color="transparent"
@@ -71,3 +72,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.enjoy-css {
+  color: whitesmoke;
+  text-shadow: -1px -1px 0px rgba(255, 255, 255, 0.3), 1px 1px 0px rgba(0, 0, 0, 0.8);
+}
+</style>

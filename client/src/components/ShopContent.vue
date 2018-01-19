@@ -1,86 +1,170 @@
 <template>
-  <v-container fluid>
+<v-container grid-list-lg>
     <v-layout row
-      wrap>
-      <v-flex xs12
-        sm2>
-        <v-navigation-drawer permanent
-          light
-          :mini-variant.sync="mini">
-          <v-list dense>
-            <v-list-tile>
-              <v-list-tile-action>
-                <v-btn icon
-                  @click.native.stop="mini = !mini">
-                  <v-icon color="indigo">view_list</v-icon>
-                </v-btn>
-              </v-list-tile-action>
-              <v-list-tile-content>
-                <v-list-tile-title>CATEGORY</v-list-tile-title>
-              </v-list-tile-content>
-            </v-list-tile>
-            <v-divider></v-divider>
-            <v-list-tile @click="">
-              <v-list-tile-action>
-                <v-icon color="indigo">phone</v-icon>
-              </v-list-tile-action>
-              <v-list-tile-content>
-                <v-list-tile-title>핸드폰</v-list-tile-title>
-              </v-list-tile-content>
-            </v-list-tile>
-            <v-list-tile @click="">
-              <v-list-tile-action>
-                <v-icon color="indigo">book</v-icon>
-              </v-list-tile-action>
-              <v-list-tile-content>
-                <v-list-tile-title>책</v-list-tile-title>
-              </v-list-tile-content>
-            </v-list-tile>
-            <v-divider inset></v-divider>
-            <v-list-tile @click="">
-              <v-list-tile-action>
-                <v-icon color="indigo">computer</v-icon>
-              </v-list-tile-action>
-              <v-list-tile-content>
-                <v-list-tile-title>컴퓨터</v-list-tile-title>
-              </v-list-tile-content>
-            </v-list-tile>
-            <v-list-tile @click="">
-              <v-list-tile-action>
-                <v-icon color="indigo">build</v-icon>
-              </v-list-tile-action>
-              <v-list-tile-content>
-                <v-list-tile-title>도구</v-list-tile-title>
-              </v-list-tile-content>
-            </v-list-tile>
-            <v-divider inset></v-divider>
-            <v-list-tile @click="">
-              <v-list-tile-action>
-                <v-icon color="indigo">location_on</v-icon>
-              </v-list-tile-action>
-              <v-list-tile-content>
-                <v-list-tile-title>찾아오는길</v-list-tile-title>
-              </v-list-tile-content>
-            </v-list-tile>
-          </v-list>
-        </v-navigation-drawer>
+      wrap justify-center>
+      <v-flex v-bind="{ [`sm${item.flex}`]: true, 'xs12': true }"
+        v-for="(item, index) in items"
+        :key="index">
+        <component :is="item.component" v-if="item.component"></component>
+        <ShopItem :imgSrc="item.src" :title="item.title" v-else></ShopItem>
       </v-flex>
     </v-layout>
-  </v-container>
+</v-container>
 </template>
 
 <script>
+import ShopContentNav from './ShopContentNav'
+import ShopItem from './ShopItem'
+
 export default {
   data() {
     return {
-      mini: false
+      items: [
+        {
+          component: ShopContentNav,
+          flex: 3
+        },
+        {
+          title: 'Pre-fab homes',
+          src: 'http://www.edent.co.kr/data/product/img_m1_14042',
+          flex: 3
+        },
+        {
+          title: 'Favorite road trips',
+          src: 'http://www.edent.co.kr/data/product/img_m1_14042',
+          flex: 3
+        },
+        {
+          title: 'Best airlines',
+          src: 'http://www.edent.co.kr/data/product/img_m1_14042',
+          flex: 3
+        },
+        {
+          title: 'Pre-fab homes',
+          src: 'http://www.edent.co.kr/data/product/img_m1_14042',
+          flex: 3
+        },
+        {
+          title: 'Favorite road trips',
+          src: 'http://www.edent.co.kr/data/product/img_m1_14042',
+          flex: 3
+        },
+        {
+          title: 'Best airlines',
+          src: 'http://www.edent.co.kr/data/product/img_m1_14042',
+          flex: 3
+        },
+        {
+          title: 'Pre-fab homes',
+          src: 'http://www.edent.co.kr/data/product/img_m1_14042',
+          flex: 3
+        },
+        {
+          title: 'Favorite road trips',
+          src: 'http://www.edent.co.kr/data/product/img_m1_14042',
+          flex: 3
+        },
+        {
+          title: 'Best airlines',
+          src: 'http://www.edent.co.kr/data/product/img_m1_14042',
+          flex: 3
+        },
+        {
+          title: 'Pre-fab homes',
+          src: 'http://www.edent.co.kr/data/product/img_m1_14042',
+          flex: 3
+        },
+        {
+          title: 'Favorite road trips',
+          src: 'http://www.edent.co.kr/data/product/img_m1_14042',
+          flex: 3
+        },
+        {
+          title: 'Best airlines',
+          src: 'http://www.edent.co.kr/data/product/img_m1_14042',
+          flex: 3
+        },
+        {
+          title: 'Pre-fab homes',
+          src: 'http://www.edent.co.kr/data/product/img_m1_14042',
+          flex: 3
+        },
+        {
+          title: 'Favorite road trips',
+          src: 'http://www.edent.co.kr/data/product/img_m1_14042',
+          flex: 3
+        },
+        {
+          title: 'Best airlines',
+          src: 'http://www.edent.co.kr/data/product/img_m1_14042',
+          flex: 3
+        },
+        {
+          title: 'Pre-fab homes',
+          src: 'http://www.edent.co.kr/data/product/img_m1_14042',
+          flex: 3
+        },
+        {
+          title: 'Favorite road trips',
+          src: '/static/doc-images/cards/road.jpg',
+          flex: 3
+        },
+        {
+          title: 'Best airlines',
+          src: '/static/doc-images/cards/plane.jpg',
+          flex: 3
+        },
+        {
+          title: 'Pre-fab homes',
+          src: '/static/doc-images/cards/house.jpg',
+          flex: 3
+        },
+        {
+          title: 'Favorite road trips',
+          src: '/static/doc-images/cards/road.jpg',
+          flex: 3
+        },
+        {
+          title: 'Best airlines',
+          src: '/static/doc-images/cards/plane.jpg',
+          flex: 3
+        },
+        {
+          title: 'Pre-fab homes',
+          src: '/static/doc-images/cards/house.jpg',
+          flex: 3
+        },
+        {
+          title: 'Favorite road trips',
+          src: '/static/doc-images/cards/road.jpg',
+          flex: 3
+        },
+        {
+          title: 'Best airlines',
+          src: '/static/doc-images/cards/plane.jpg',
+          flex: 3
+        },
+        {
+          title: 'Pre-fab homes',
+          src: '/static/doc-images/cards/house.jpg',
+          flex: 3
+        },
+        {
+          title: 'Favorite road trips',
+          src: '/static/doc-images/cards/road.jpg',
+          flex: 3
+        },
+        {
+          title: 'Best airlines',
+          src: '/static/doc-images/cards/plane.jpg',
+          flex: 3
+        }
+      ]
     }
+  },
+  components: {
+    ShopContentNav,
+    ShopItem
   }
 }
 </script>
-<style>
-.media {
-  height: 100%;
-  margin: 0;
-}
-</style>

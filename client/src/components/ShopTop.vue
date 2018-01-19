@@ -1,6 +1,6 @@
 <template>
-  <iu-toolbar-nav title="로고"
-    height="30px">
+  <iu-toolbar-nav title="DSHOP"
+    height="40px">
     <div class="d-flex align-center"
       style="margin-left: auto">
       <v-btn small
