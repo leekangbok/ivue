@@ -11,12 +11,16 @@ import types from './mutation-types'
 Vue.use(Vuex)
 
 const state = {
-  [types.SIDENAV_DRAWER]: null
+  [types.SIDENAV_DRAWER]: null,
+  [types.LOGIN_STATUS]: false
 }
 
 const mutations = {
   [types.SIDENAV_DRAWER](state, drawer) {
     state[types.SIDENAV_DRAWER] = drawer
+  },
+  [types.LOGIN_STATUS](state, status) {
+    state[types.LOGIN_STATUS] = status
   }
 }
 
