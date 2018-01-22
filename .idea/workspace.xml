@@ -7,51 +7,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e799a179-ef98-42d8-a0d7-1bfb3d8f333b" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/ivue.iml" afterPath="$PROJECT_DIR$/.idea/ivue.iml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/.vscode/tags" afterPath="$PROJECT_DIR$/.vscode/tags" />
-      <change beforePath="$PROJECT_DIR$/client/.eslintrc.js" afterPath="$PROJECT_DIR$/client/.eslintrc.js" />
-      <change beforePath="$PROJECT_DIR$/client/config/index.js" afterPath="$PROJECT_DIR$/client/config/index.js" />
-      <change beforePath="$PROJECT_DIR$/client/index.html" afterPath="$PROJECT_DIR$/client/index.html" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" afterPath="$PROJECT_DIR$/client/package-lock.json" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" afterPath="$PROJECT_DIR$/client/package.json" />
-      <change beforePath="$PROJECT_DIR$/client/src/AppAdmin.vue" afterPath="$PROJECT_DIR$/client/src/AppAdmin.vue" />
-      <change beforePath="$PROJECT_DIR$/client/src/assets/logo.png" afterPath="$PROJECT_DIR$/client/src/assets/logo.png" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/SideNav.vue" afterPath="$PROJECT_DIR$/client/src/components/SideNav.vue" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/button/Button.vue" afterPath="$PROJECT_DIR$/client/src/components/button/Button.vue" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/index.js" afterPath="$PROJECT_DIR$/client/src/components/index.js" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/searchbox/Searchbox.vue" afterPath="$PROJECT_DIR$/client/src/components/searchbox/Searchbox.vue" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/toolbar/Toolbar.vue" afterPath="$PROJECT_DIR$/client/src/components/toolbar/Toolbar.vue" />
-      <change beforePath="$PROJECT_DIR$/client/src/main.js" afterPath="$PROJECT_DIR$/client/src/main.js" />
-      <change beforePath="$PROJECT_DIR$/client/src/projects/Home.vue" afterPath="$PROJECT_DIR$/client/src/projects/Home.vue" />
-      <change beforePath="$PROJECT_DIR$/client/src/projects/rio/Rio.vue" afterPath="$PROJECT_DIR$/client/src/projects/rio/Rio.vue" />
+      <change beforePath="$PROJECT_DIR$/client/src/AppShop.vue" afterPath="$PROJECT_DIR$/client/src/AppShop.vue" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/LogInOut.vue" afterPath="$PROJECT_DIR$/client/src/components/LogInOut.vue" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Notifications.vue" afterPath="$PROJECT_DIR$/client/src/components/Notifications.vue" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/ShopContent.vue" afterPath="$PROJECT_DIR$/client/src/components/ShopContent.vue" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/ShopItem.vue" afterPath="$PROJECT_DIR$/client/src/components/ShopItem.vue" />
+      <change beforePath="$PROJECT_DIR$/client/src/store/actions.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/client/src/store/getters.js" afterPath="" />
       <change beforePath="$PROJECT_DIR$/client/src/store/index.js" afterPath="$PROJECT_DIR$/client/src/store/index.js" />
-      <change beforePath="$PROJECT_DIR$/client/src/store/modules/menu/blog.js" afterPath="$PROJECT_DIR$/client/src/store/modules/menu/blog.js" />
-      <change beforePath="$PROJECT_DIR$/client/src/store/modules/menu/customer.js" afterPath="$PROJECT_DIR$/client/src/store/modules/menu/customer.js" />
-      <change beforePath="$PROJECT_DIR$/client/src/store/modules/menu/dental.js" afterPath="$PROJECT_DIR$/client/src/store/modules/menu/dental.js" />
-      <change beforePath="$PROJECT_DIR$/client/src/store/modules/menu/index.js" afterPath="$PROJECT_DIR$/client/src/store/modules/menu/index.js" />
-      <change beforePath="$PROJECT_DIR$/client/src/store/modules/menu/live-stream.js" afterPath="$PROJECT_DIR$/client/src/store/modules/menu/live-stream.js" />
-      <change beforePath="$PROJECT_DIR$/client/src/store/modules/menu/stock.js" afterPath="$PROJECT_DIR$/client/src/store/modules/menu/stock.js" />
       <change beforePath="$PROJECT_DIR$/client/src/store/mutation-types.js" afterPath="$PROJECT_DIR$/client/src/store/mutation-types.js" />
-      <change beforePath="$PROJECT_DIR$/run.py" afterPath="$PROJECT_DIR$/run.py" />
-      <change beforePath="$PROJECT_DIR$/server/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/server/api/__init__.py" afterPath="$PROJECT_DIR$/server/api/__init__.py" />
-      <change beforePath="$PROJECT_DIR$/server/api/doctor/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/server/api/doctor/consult/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/server/api/doctor/member/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/server/api/object/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/server/api/object/network/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/server/api/object/network/network_v4.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/server/api/object/network/network_v6.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/server/api/policy/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/server/api/policy/forward/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/server/api/policy/forward/forward_v4.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/server/api/policy/forward/forward_v6.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/server/api/utils.py" afterPath="$PROJECT_DIR$/server/api/utils.py" />
-      <change beforePath="$PROJECT_DIR$/server/db/__init__.py" afterPath="$PROJECT_DIR$/server/db/__init__.py" />
-      <change beforePath="$PROJECT_DIR$/server/db/misc.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/server/db/redis/__init__.py" afterPath="$PROJECT_DIR$/server/db/redis/__init__.py" />
-      <change beforePath="$PROJECT_DIR$/server/db/sqlite/__init__.py" afterPath="$PROJECT_DIR$/server/db/sqlite/__init__.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -142,9 +107,9 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="437" />
-    <option name="y" value="197" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="960" />
     <option name="height" value="590" />
   </component>
@@ -163,14 +128,32 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="ivue" type="b2602c69:ProjectViewProjectNode" />
               <item name="ivue" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ivue" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ivue" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ivue" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ivue" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ivue" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ivue" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="rio" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -332,9 +315,9 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="437" y="197" width="960" height="590" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21149674" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13169643" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2905512" sideWeight="0.51235294" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -579,20 +562,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/api/rio/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/run.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/api/rio/shop/edent.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="61">
@@ -632,6 +601,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="592">
           <caret line="37" column="43" lean-forward="true" selection-start-line="37" selection-start-column="43" selection-end-line="37" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/api/rio/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="5" column="23" lean-forward="true" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

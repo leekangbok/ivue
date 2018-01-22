@@ -1,15 +1,19 @@
 <template>
-<v-container grid-list-lg>
+  <v-container grid-list-lg>
     <v-layout row
-      wrap justify-center>
+      wrap
+      justify-center>
       <v-flex v-bind="{ [`sm${item.flex}`]: true, 'xs12': true }"
         v-for="(item, index) in items"
         :key="index">
-        <component :is="item.component" v-if="item.component"></component>
-        <ShopItem :imgSrc="item.src" :title="item.title" v-else></ShopItem>
+        <component :is="item.component"
+          v-if="item.component"></component>
+        <ShopItem :imgSrc="item.src"
+          :title="item.title"
+          v-else></ShopItem>
       </v-flex>
     </v-layout>
-</v-container>
+  </v-container>
 </template>
 
 <script>

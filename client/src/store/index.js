@@ -1,7 +1,5 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import * as actions from './actions'
-import * as getters from './getters'
 import menu from './modules/menu'
 import doctorMember from './modules/doctor/member'
 import edent from './modules/edent'
@@ -12,7 +10,8 @@ Vue.use(Vuex)
 
 const state = {
   [types.SIDENAV_DRAWER]: null,
-  [types.LOGIN_STATUS]: false
+  [types.LOGIN_STATUS]: false,
+  [types.CART_ITEMS]: []
 }
 
 const mutations = {
@@ -21,8 +20,19 @@ const mutations = {
   },
   [types.LOGIN_STATUS](state, status) {
     state[types.LOGIN_STATUS] = status
+  },
+  [types.CART_ITEMS](state, item) {
+    state[types.CART_ITEMS].push(item)
   }
 }
+
+const getters = {
+  [types.CART_ITEMS_COUNT](state, getters) {
+    return state[types.CART_ITEMS].length
+  }
+}
+
+const actions = {}
 
 export default new Vuex.Store({
   state,

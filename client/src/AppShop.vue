@@ -1,55 +1,59 @@
 <template>
   <v-app id="app-shop">
-      <v-layout row
-        wrap
-        justify-center>
-        <v-flex xs12>
-          <v-card flat
-            dark>
-            <v-card-media :src="topBgImg">
-              <v-layout row
-                wrap
-                justify-center>
-                <v-flex xs12
-                  sm6 md8>
-                  <ShopTop></ShopTop>
-                </v-flex>
-              </v-layout>
-            </v-card-media>
-          </v-card>
-        </v-flex>
-        <v-flex xs12>
-          <v-card flat
-            dark>
-            <v-card-media :src="topBgImg">
+    <v-layout row
+      wrap
+      justify-center>
+      <v-flex xs12>
+        <v-card flat
+          dark>
+          <v-card-media :src="topBgImg">
             <v-layout row
               wrap
               justify-center>
               <v-flex xs12
-                sm6 md8>
+                sm6
+                md8>
+                <ShopTop></ShopTop>
+              </v-flex>
+            </v-layout>
+          </v-card-media>
+        </v-card>
+      </v-flex>
+      <v-flex xs12>
+        <v-card flat
+          dark>
+          <v-card-media :src="topBgImg">
+            <v-layout row
+              wrap
+              justify-center>
+              <v-flex xs12
+                sm6
+                md8>
                 <ShopCenter></ShopCenter>
               </v-flex>
             </v-layout>
-            </v-card-media>
-          </v-card>
-        </v-flex>
-        <v-flex xs12>
-          <v-card flat>
-            <v-layout row
-              wrap
-              justify-center>
-              <v-flex xs12
-                sm6 md8>
-                <ShopBottom></ShopBottom>
-              </v-flex>
-            </v-layout>
-          </v-card>
-        </v-flex>
-        <v-flex xs12
-          sm6 md8>
-          <ShopContent></ShopContent>
-        </v-flex>
-      </v-layout>
+          </v-card-media>
+        </v-card>
+      </v-flex>
+      <v-flex xs12>
+        <v-card flat>
+          <v-layout row
+            wrap
+            justify-center>
+            <v-flex xs12
+              sm6
+              md8>
+              <ShopBottom></ShopBottom>
+            </v-flex>
+          </v-layout>
+        </v-card>
+      </v-flex>
+      <v-flex xs12
+        sm6
+        md8>
+        <ShopContent></ShopContent>
+      </v-flex>
+    </v-layout>
   </v-app>
 </template>
 
