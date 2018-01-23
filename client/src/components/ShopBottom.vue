@@ -5,7 +5,8 @@
         color="light-blue accent-2"></v-tabs-slider>
       <v-tabs-item v-for="i in items"
         :key="i"
-        :href="'#tab-' + i">
+        :href="'#tab-' + i"
+        ripple>
         {{ i }}
       </v-tabs-item>
     </v-tabs-bar>

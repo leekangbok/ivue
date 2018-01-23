@@ -16,7 +16,8 @@ def parse(text):
             #     print(j)
             if _ == IMAGE:
                 products.append({
-                    'src': 'http://www.edent.co.kr{}'.format(j.find_all('img')[0]['src'].replace('_s1_', '_b1_')),
+                    'src' : 'http://www.edent.co.kr{}'.format(
+                        j.find_all('img')[0]['src'].replace('_s1_', '_b1_')),
                     'flex': 3
                 })
 
@@ -28,5 +29,5 @@ def get_products(product):
                  'search.php?top_search_sca_cookie=&inc_wish=1&'
                  'top_stx={}&top_sca=5'.format(product))
     d.addCallback(lambda resp: resp.text(encoding='utf-8')).addCallback(
-            lambda text: threads.deferToThread(parse, text))
+        lambda text: threads.deferToThread(parse, text))
     return d

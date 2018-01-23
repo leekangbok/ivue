@@ -5,10 +5,6 @@
         class="ml-0 pl-3"
         v-if="!searchMode">
         <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-        <v-btn @click="searchMode=!searchMode"
-          icon>
-          <v-icon>search</v-icon>
-        </v-btn>
         <span class="hidden-xs-only"
           v-if="title.length">{{ title }}</span>
       </v-toolbar-title>
@@ -29,7 +25,15 @@
           single-line
           style="min-width: 130px"></v-text-field>
       </template>
-      <slot></slot>
+      <div class="d-flex align-center"
+        style="margin-left: auto">
+        <v-btn @click="searchMode=!searchMode"
+          icon
+          v-if="!searchMode">
+          <v-icon>search</v-icon>
+        </v-btn>
+        <slot></slot>
+      </div>
       <v-tabs-bar color="transparent"
         dark
         slot="extension"

@@ -8,14 +8,11 @@
       dark
       color="blue-grey darken-4"
       @onSearch="onSearch"
-      title="Google Contacts"
+      title="Contacts"
       :tabsItem="[{title: 'PB 상품'}, {title: '이벤트 특가'}, {title: '기구/샤프닝'}, {title: '게시판'}]">
-      <div class="d-flex align-center"
-        style="margin-left: auto">
-        <MoreApps></MoreApps>
-        <Notifications></Notifications>
-        <Accounts></Accounts>
-      </div>
+      <MoreApps></MoreApps>
+      <Notifications></Notifications>
+      <Accounts></Accounts>
     </TopNav>
     <v-content>
       <v-container>

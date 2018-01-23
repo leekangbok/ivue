@@ -1,66 +1,68 @@
 <template>
   <v-app id="app-shop">
     <v-container fluid>
-    <v-layout row
-      wrap
-      justify-center>
-      <v-flex xs12>
-        <v-card flat
-          dark>
-          <v-card-media :src="topBgImg">
+      <v-layout row
+        wrap
+        justify-center>
+        <v-flex xs12>
+          <v-card flat
+            dark>
+            <v-card-media :src="topBgImg">
+              <v-layout row
+                wrap
+                justify-center>
+                <v-flex xs12
+                  md10>
+                  <ShopTop></ShopTop>
+                </v-flex>
+              </v-layout>
+            </v-card-media>
+          </v-card>
+        </v-flex>
+        <v-flex xs12>
+          <v-card flat
+            dark>
+            <v-card-media :src="topBgImg">
+              <v-layout row
+                wrap
+                justify-center>
+                <v-flex xs12
+                  md10>
+                  <ShopCenter></ShopCenter>
+                </v-flex>
+              </v-layout>
+            </v-card-media>
+          </v-card>
+        </v-flex>
+        <v-flex xs12>
+          <v-card flat>
             <v-layout row
               wrap
               justify-center>
               <v-flex xs12
-                sm6
-                md8>
-                <ShopTop></ShopTop>
+                md10>
+                <ShopBottom></ShopBottom>
               </v-flex>
             </v-layout>
-          </v-card-media>
-        </v-card>
-      </v-flex>
-      <v-flex xs12>
-        <v-card flat
-          dark>
-          <v-card-media :src="topBgImg">
-            <v-layout row
-              wrap
-              justify-center>
-              <v-flex xs12
-                sm6
-                md8>
-                <ShopCenter></ShopCenter>
-              </v-flex>
-            </v-layout>
-          </v-card-media>
-        </v-card>
-      </v-flex>
-      <v-flex xs12>
-        <v-card flat>
-          <v-layout row
-            wrap
-            justify-center>
-            <v-flex xs12
-              sm6
-              md8>
-              <ShopBottom></ShopBottom>
-            </v-flex>
-          </v-layout>
-        </v-card>
-      </v-flex>
-      <v-flex xs12
-        sm6
-        md8>
-        <ShopContent></ShopContent>
-      </v-flex>
-    </v-layout>
-            <Loading
-            :show="show"
-            :label="label"
-            >
-        </Loading>
-      </v-container>
+          </v-card>
+        </v-flex>
+        <v-flex xs12
+          md10>
+          <ShopContent></ShopContent>
+        </v-flex>
+      </v-layout>
+      <Loading :show="show"
+        :label="label">
+      </Loading>
+    </v-container>
+    <v-snackbar :timeout="3000"
+      v-model="snackbar"
+      color="cyan darken-2">
+      {{ snackbarText }}
+      <v-btn dark
+        flat
+        @click.native="snackbar = false">확인</v-btn>
+    </v-snackbar>
   </v-app>
 </template>
 
@@ -89,6 +91,17 @@ export default {
   computed: {
     show() {
       return this.$store.state[types.SHOW_LOADING]
+    },
+    snackbar: {
+      get() {
+        return this.$store.state[types.SHOW_SNACKBAR]
+      },
+      set(value) {
+        this.$store.commit(types.SHOW_SNACKBAR, value)
+      }
+    },
+    snackbarText() {
+      return '장바구니에 땡땡땡을 추가했습니다.'
     }
   }
 }
