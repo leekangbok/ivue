@@ -1,5 +1,5 @@
 <template>
-  <iu-toolbar-nav searchBox hiddenTitle>
+  <iu-toolbar-nav searchBox hiddenTitle @onSearch="onSearch">
       <v-icon large slot="title">home</v-icon>
       <!-- <span class="hidden-xs-only">Dshop</span> -->
     <!-- <v-avatar size="40px"
@@ -15,8 +15,10 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 import Notifications from './Notifications'
 import MyShop from './MyShop'
+import types from '@/store/mutation-types'
 
 export default {
   data() {
@@ -27,6 +29,14 @@ export default {
   components: {
     Notifications,
     MyShop
+  },
+  methods: {
+    onSearch(text) {
+      this[types.GET_RIOSHOP_PRODUCT_ITEMS]({ query: text }).then(response =>
+        console.log(response)
+      )
+    },
+    ...mapActions([types.GET_RIOSHOP_PRODUCT_ITEMS])
   }
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
 <v-card>
-  <v-navigation-drawer permanent id="shop-nav-drawer">
+  <v-navigation-drawer height="353px" permanent id="shop-nav-drawer">
       <v-list dense>
         <v-list-tile>
           <v-list-tile-action>

@@ -1,5 +1,6 @@
 <template>
   <v-app id="app-shop">
+    <v-container fluid>
     <v-layout row
       wrap
       justify-center>
@@ -54,10 +55,18 @@
         <ShopContent></ShopContent>
       </v-flex>
     </v-layout>
+            <Loading
+            :show="show"
+            :label="label"
+            >
+        </Loading>
+      </v-container>
   </v-app>
 </template>
 
 <script>
+import Loading from 'vue-full-loading'
+import types from '@/store/mutation-types'
 import ShopTop from './components/ShopTop'
 import ShopCenter from './components/ShopCenter'
 import ShopBottom from './components/ShopBottom'
@@ -66,6 +75,7 @@ import ShopContent from './components/ShopContent'
 export default {
   data() {
     return {
+      label: '로딩중.....',
       topBgImg: 'src/assets/bg2.svg'
     }
   },
@@ -73,12 +83,19 @@ export default {
     ShopTop,
     ShopCenter,
     ShopBottom,
-    ShopContent
+    ShopContent,
+    Loading
+  },
+  computed: {
+    show() {
+      return this.$store.state[types.SHOW_LOADING]
+    }
   }
 }
 </script>
 
-<style>
+<style
+>
 .route-fade-enter-active,
 .route-fade-leave-active {
   transition: opacity 0.5s;

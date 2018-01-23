@@ -2,7 +2,7 @@
   <v-container grid-list-lg>
     <v-layout row
       wrap
-      justify-center>
+      justify-left>
       <v-flex v-bind="{ [`sm${item.flex}`]: true, 'xs12': true }"
         v-for="(item, index) in items"
         :key="index">
@@ -17,158 +17,32 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+import types from '@/store/mutation-types'
 import ShopContentNav from './ShopContentNav'
 import ShopItem from './ShopItem'
 
 export default {
   data() {
     return {
-      items: [
-        {
-          component: ShopContentNav,
-          flex: 3
-        },
-        {
-          title: 'Pre-fab homes',
-          src: 'http://www.edent.co.kr/data/product/img_m1_14042',
-          flex: 3
-        },
-        {
-          title: 'Favorite road trips',
-          src: 'http://www.edent.co.kr/data/product/img_m1_14042',
-          flex: 3
-        },
-        {
-          title: 'Best airlines',
-          src: 'http://www.edent.co.kr/data/product/img_m1_14042',
-          flex: 3
-        },
-        {
-          title: 'Pre-fab homes',
-          src: 'http://www.edent.co.kr/data/product/img_m1_14042',
-          flex: 3
-        },
-        {
-          title: 'Favorite road trips',
-          src: 'http://www.edent.co.kr/data/product/img_m1_14042',
-          flex: 3
-        },
-        {
-          title: 'Best airlines',
-          src: 'http://www.edent.co.kr/data/product/img_m1_14042',
-          flex: 3
-        },
-        {
-          title: 'Pre-fab homes',
-          src: 'http://www.edent.co.kr/data/product/img_m1_14042',
-          flex: 3
-        },
-        {
-          title: 'Favorite road trips',
-          src: 'http://www.edent.co.kr/data/product/img_m1_14042',
-          flex: 3
-        },
-        {
-          title: 'Best airlines',
-          src: 'http://www.edent.co.kr/data/product/img_m1_14042',
-          flex: 3
-        },
-        {
-          title: 'Pre-fab homes',
-          src: 'http://www.edent.co.kr/data/product/img_m1_14042',
-          flex: 3
-        },
-        {
-          title: 'Favorite road trips',
-          src: 'http://www.edent.co.kr/data/product/img_m1_14042',
-          flex: 3
-        },
-        {
-          title: 'Best airlines',
-          src: 'http://www.edent.co.kr/data/product/img_m1_14042',
-          flex: 3
-        },
-        {
-          title: 'Pre-fab homes',
-          src: 'http://www.edent.co.kr/data/product/img_m1_14042',
-          flex: 3
-        },
-        {
-          title: 'Favorite road trips',
-          src: 'http://www.edent.co.kr/data/product/img_m1_14042',
-          flex: 3
-        },
-        {
-          title: 'Best airlines',
-          src: 'http://www.edent.co.kr/data/product/img_m1_14042',
-          flex: 3
-        },
-        {
-          title: 'Pre-fab homes',
-          src: 'http://www.edent.co.kr/data/product/img_m1_14042',
-          flex: 3
-        },
-        {
-          title: 'Favorite road trips',
-          src: '/static/doc-images/cards/road.jpg',
-          flex: 3
-        },
-        {
-          title: 'Best airlines',
-          src: '/static/doc-images/cards/plane.jpg',
-          flex: 3
-        },
-        {
-          title: 'Pre-fab homes',
-          src: '/static/doc-images/cards/house.jpg',
-          flex: 3
-        },
-        {
-          title: 'Favorite road trips',
-          src: '/static/doc-images/cards/road.jpg',
-          flex: 3
-        },
-        {
-          title: 'Best airlines',
-          src: '/static/doc-images/cards/plane.jpg',
-          flex: 3
-        },
-        {
-          title: 'Pre-fab homes',
-          src: '/static/doc-images/cards/house.jpg',
-          flex: 3
-        },
-        {
-          title: 'Favorite road trips',
-          src: '/static/doc-images/cards/road.jpg',
-          flex: 3
-        },
-        {
-          title: 'Best airlines',
-          src: '/static/doc-images/cards/plane.jpg',
-          flex: 3
-        },
-        {
-          title: 'Pre-fab homes',
-          src: '/static/doc-images/cards/house.jpg',
-          flex: 3
-        },
-        {
-          title: 'Favorite road trips',
-          src: '/static/doc-images/cards/road.jpg',
-          flex: 3
-        },
-        {
-          title: 'Best airlines',
-          src: '/static/doc-images/cards/plane.jpg',
-          flex: 3
-        }
-      ]
     }
   },
   components: {
     ShopContentNav,
     ShopItem
+  },
+  computed: {
+    ...mapGetters({
+      productItems: types.GET_RIOSHOP_PRODUCT_ITEMS
+    }),
+    items() {
+      let items = this.productItems.slice()
+      items.unshift({
+        component: ShopContentNav,
+        flex: 3
+      })
+      return items
+    }
   }
 }
 </script>

@@ -16,9 +16,9 @@ def parse(text):
     return 'parse_kdental'
 
 
-def get_prices(request):
+def get_prices(product):
     d = treq.post('http://www.kdental.co.kr/shopping/search_list.php',
-                  data={'searchProductKeyWord': request.args.get('item')[0]})
+                  data={'searchProductKeyWord': product})
     d.addCallback(lambda resp: resp.text(encoding='utf-8')).addCallback(
-        lambda text: threads.deferToThread(parse, text))
+            lambda text: threads.deferToThread(parse, text))
     return d

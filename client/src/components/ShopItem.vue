@@ -1,7 +1,7 @@
 <template>
   <v-card>
     <v-card-media :src="imgSrc"
-      height="200px">
+      height="300px">
       <v-container fill-height
         fluid>
         <v-layout fill-height>

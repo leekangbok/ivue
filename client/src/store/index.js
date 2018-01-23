@@ -4,6 +4,7 @@ import menu from './modules/menu'
 import doctorMember from './modules/doctor/member'
 import edent from './modules/edent'
 import bitcoin from './modules/bitcoin'
+import rioShop from './modules/rioShop'
 import types from './mutation-types'
 
 Vue.use(Vuex)
@@ -11,7 +12,8 @@ Vue.use(Vuex)
 const state = {
   [types.SIDENAV_DRAWER]: null,
   [types.LOGIN_STATUS]: false,
-  [types.CART_ITEMS]: []
+  [types.CART_ITEMS]: [],
+  [types.SHOW_LOADING]: false
 }
 
 const mutations = {
@@ -23,6 +25,9 @@ const mutations = {
   },
   [types.CART_ITEMS](state, item) {
     state[types.CART_ITEMS].push(item)
+  },
+  [types.SHOW_LOADING](state, show) {
+    state[types.SHOW_LOADING] = show
   }
 }
 
@@ -43,6 +48,7 @@ export default new Vuex.Store({
     menu,
     doctorMember,
     edent,
-    bitcoin
+    bitcoin,
+    rioShop
   }
 })
