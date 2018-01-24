@@ -20,7 +20,10 @@
         class="ml-2"
         style="max-width: 500px; min-width: 130px;"
         v-if="searchBox"></v-text-field>
-      <slot></slot>
+      <div class="d-flex align-center"
+        style="margin-left: auto">
+        <slot></slot>
+      </div>
       <v-tabs-bar color="transparent"
         dark
         slot="extension"

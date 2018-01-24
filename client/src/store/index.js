@@ -14,7 +14,8 @@ const state = {
   [types.LOGIN_STATUS]: false,
   [types.CART_ITEMS]: [],
   [types.SHOW_LOADING]: false,
-  [types.SHOW_SNACKBAR]: false
+  [types.SHOW_SNACKBAR]: false,
+  [types.SNACKBAR_TEXT]: ''
 }
 
 const mutations = {
@@ -25,8 +26,9 @@ const mutations = {
     state[types.LOGIN_STATUS] = status
   },
   [types.CART_ITEMS](state, item) {
-    state[types.SHOW_SNACKBAR] = true
     state[types.CART_ITEMS].push(item)
+    state[types.SNACKBAR_TEXT] = '상품이름을 보여준다.'
+    state[types.SHOW_SNACKBAR] = true
   },
   [types.SHOW_LOADING](state, show) {
     state[types.SHOW_LOADING] = show

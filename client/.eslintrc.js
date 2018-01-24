@@ -26,6 +26,7 @@ module.exports = {
     'func-call-spacing': 'off',
     'indent': 'off',
     'quotes': 'off',
-    'no-unused-vars': 'off'
+    'no-unused-vars': 'off',
+    'no-trailing-spaces': 'off'
   }
 }

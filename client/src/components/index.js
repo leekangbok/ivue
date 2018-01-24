@@ -12,6 +12,7 @@ import Parallax from './parallax'
 import C3 from './c3'
 import Searchbox2 from './searchbox2'
 import ToolbarNav from './toolbar-nav'
+import Panel from './panel'
 
 const components = {
   Test,
@@ -26,7 +27,8 @@ const components = {
   Parallax,
   C3,
   Searchbox2,
-  ToolbarNav
+  ToolbarNav,
+  Panel
 }
 
 function componentsInstall(Vue) {

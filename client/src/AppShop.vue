@@ -5,49 +5,47 @@
         wrap
         justify-center>
         <v-flex xs12>
-          <v-card flat
-            dark>
-            <v-card-media :src="topBgImg">
+          <iu-panel flat dark :bgImg="topBgImg">
               <v-layout row
                 wrap
                 justify-center>
                 <v-flex xs12
-                  md10>
+                  md10
+                  lg8>
                   <ShopTop></ShopTop>
                 </v-flex>
               </v-layout>
-            </v-card-media>
-          </v-card>
+          </iu-panel>
         </v-flex>
         <v-flex xs12>
-          <v-card flat
-            dark>
-            <v-card-media :src="topBgImg">
+          <iu-panel flat dark :bgImg="topBgImg">
               <v-layout row
                 wrap
                 justify-center>
                 <v-flex xs12
-                  md10>
+                  md10
+                  lg8>
                   <ShopCenter></ShopCenter>
                 </v-flex>
               </v-layout>
-            </v-card-media>
-          </v-card>
+            </iu-panel>
         </v-flex>
         <v-flex xs12>
-          <v-card flat>
+          <iu-panel flat>
             <v-layout row
               wrap
               justify-center>
               <v-flex xs12
-                md10>
+                md10
+                lg8>
                 <ShopBottom></ShopBottom>
               </v-flex>
             </v-layout>
-          </v-card>
+          </iu-panel>
         </v-flex>
         <v-flex xs12
-          md10>
+          md10
+          lg8>
           <ShopContent></ShopContent>
         </v-flex>
       </v-layout>
@@ -57,16 +55,16 @@
     </v-container>
     <v-snackbar :timeout="3000"
       v-model="snackbar"
-      color="cyan darken-2">
+      color="green darken-2">
       {{ snackbarText }}
-      <v-btn dark
-        flat
+      <v-btn dark flat
         @click.native="snackbar = false">확인</v-btn>
     </v-snackbar>
   </v-app>
 </template>
 
 <script>
+import { mapState, mapMutations } from 'vuex'
 import Loading from 'vue-full-loading'
 import types from '@/store/mutation-types'
 import ShopTop from './components/ShopTop'
@@ -89,26 +87,28 @@ export default {
     Loading
   },
   computed: {
-    show() {
-      return this.$store.state[types.SHOW_LOADING]
-    },
     snackbar: {
       get() {
-        return this.$store.state[types.SHOW_SNACKBAR]
+        return this.showSnackbar
       },
       set(value) {
-        this.$store.commit(types.SHOW_SNACKBAR, value)
+        this[types.SHOW_SNACKBAR](value)
       }
     },
-    snackbarText() {
-      return '장바구니에 땡땡땡을 추가했습니다.'
-    }
-  }
+    ...mapState({
+      showSnackbar: types.SHOW_SNACKBAR,
+      show: types.SHOW_LOADING,
+      snackbarText: types.SNACKBAR_TEXT
+    })
+  },
+  methods: {
+    ...mapMutations([types.SHOW_SNACKBAR])
+  },
+  mounted() {}
 }
 </script>
 
-<style
->
+<style>
 .route-fade-enter-active,
 .route-fade-leave-active {
   transition: opacity 0.5s;

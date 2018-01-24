@@ -10,11 +10,8 @@
           slot="title">
           <img src="src/assets/search.jpg">
     </v-avatar> -->
-      <div class="d-flex align-center"
-        style="margin-left: auto">
-        <Notifications @click.native.stop="dialog = true"></Notifications>
-        <MyShop></MyShop>
-      </div>
+      <Notifications @click.native.stop="dialog = true"></Notifications>
+      <MyShop></MyShop>
     </iu-toolbar-nav>
     <v-dialog v-model="dialog"
       max-width="390">
@@ -23,11 +20,11 @@
         <v-card-text>지금까지 담겨진 상품들 보여주고 결재하기.</v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="green darken-1"
-            flat="flat"
+          <v-btn
+             color="primary"
             @click.native="dialog = false">확인</v-btn>
-          <v-btn color="green darken-1"
-            flat="flat"
+          <v-btn
+             color="primary"
             @click.native="dialog = false">결제</v-btn>
         </v-card-actions>
       </v-card>
