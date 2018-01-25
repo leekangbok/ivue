@@ -1,6 +1,6 @@
 <template>
   <iu-toolbar-nav title="DSHOP"
-    height="40px">
+    height="28px">
     <div class="d-flex align-center"
       style="margin-left: auto">
       <LogInOut/>
@@ -17,8 +17,7 @@ import LogInOut from './LogInOut'
 
 export default {
   data() {
-    return {
-    }
+    return {}
   },
   components: {
     MoreApps,

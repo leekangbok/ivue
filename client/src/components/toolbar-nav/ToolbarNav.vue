@@ -1,12 +1,15 @@
 <template>
-  <v-tabs fixed>
+  <v-tabs fixed
+    class="mt-1 mb-1">
     <v-toolbar v-bind="$attrs"
-      color="transparent">
+      color="transparent"
+      dense>
       <v-toolbar-title :class="{'ml-3':true, 'pl-3':true, 'mr-3':true, 'pl-3':true, 'hidden-xs-only': hiddenTitle}">
         <v-toolbar-side-icon @click.stop="drawer = !drawer"
           v-if="nav"></v-toolbar-side-icon>
         <slot name="title">
-          <span v-if="title.length" class="enjoy-css">{{ title }}</span>
+          <span v-if="title.length"
+            class="enjoy-css">{{ title }}</span>
         </slot>
       </v-toolbar-title>
       <v-text-field prepend-icon="search"
@@ -18,8 +21,9 @@
         :append-icon="search ? 'clear' : ''"
         :append-icon-cb="() => search = ''"
         class="ml-2"
-        style="max-width: 500px; min-width: 130px;"
+        style="max-width: 500px; min-width: 76px;"
         v-if="searchBox"></v-text-field>
+      <slot name="link"></slot>
       <div class="d-flex align-center"
         style="margin-left: auto">
         <slot></slot>
@@ -79,6 +83,7 @@ export default {
 <style scoped>
 .enjoy-css {
   color: whitesmoke;
-  text-shadow: -1px -1px 0px rgba(255, 255, 255, 0.3), 1px 1px 0px rgba(0, 0, 0, 0.8);
+  text-shadow: -1px -1px 0px rgba(255, 255, 255, 0.3),
+    1px 1px 0px rgba(0, 0, 0, 0.8);
 }
 </style>

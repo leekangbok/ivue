@@ -2,7 +2,8 @@
   <v-dialog v-model="dialog"
     persistent
     max-width="400px">
-    <v-btn small
+    <v-btn class="caption"
+      small
       outline
       @click.native="onLogout"
       slot="activator">{{ status ? '로그아웃' : '로그인' }}

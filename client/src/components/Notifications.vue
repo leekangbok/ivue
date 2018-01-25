@@ -4,8 +4,7 @@
     flat>
     <v-badge top
       color="green">
-      <span v-if="cartItemsCount"
-        slot="badge">{{ cartItemsCount }}</span>
+      <span slot="badge">{{ cartItemsCount }}</span>
       <v-icon>shopping_cart</v-icon>
     </v-badge>
   </v-btn>

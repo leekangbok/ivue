@@ -1,12 +1,15 @@
 <template>
-  <v-tabs fixed>
+  <v-tabs fixed
+    grow>
     <v-tabs-bar color="transparent">
       <v-tabs-slider id="topnav-tabs-slider"
         color="light-blue accent-2"></v-tabs-slider>
       <v-tabs-item v-for="i in items"
         :key="i"
         :href="'#tab-' + i"
-        ripple>
+        ripple
+        @mouseover.native="onMouseOver"
+        @mouseout.native="onMouseOut">
         {{ i }}
       </v-tabs-item>
     </v-tabs-bar>
@@ -21,6 +24,10 @@ export default {
       text:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
     }
+  },
+  methods: {
+    onMouseOver() {},
+    onMouseOut() {}
   }
 }
 </script>

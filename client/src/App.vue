@@ -116,13 +116,18 @@ export default {
   padding-left: 5px !important;
   padding-right: 5px !important;
 }
+/* 
+a.tabs__item.tabs__item--active {
+  color: darkcyan !important;
+  font-size: 13px !important;
+  font-weight: bold !important;
+} */
 
 .tabs__item {
   font-weight: bold !important;
 }
 
-.tabs__item--active {
-  font-size: 13px !important;
-  font-weight: bold !important;
+a.tabs__item:hover {
+  color: grey !important;
 }
 </style>

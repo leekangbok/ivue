@@ -5,47 +5,46 @@
         wrap
         justify-center>
         <v-flex xs12>
-          <iu-panel flat dark :bgImg="topBgImg">
-              <v-layout row
-                wrap
-                justify-center>
-                <v-flex xs12
-                  md10
-                  lg8>
-                  <ShopTop></ShopTop>
-                </v-flex>
-              </v-layout>
+          <iu-panel flat
+            dark
+            :bgImg="topBgImg">
+            <v-layout row
+              wrap
+              justify-center>
+              <v-flex v-bind="{ [`xs${xsflex}`]: true, [`sm${smflex}`]: true, [`md${mdflex}`]: true, [`lg${lgflex}`]: true, [`xl${xlflex}`]: true }">
+                <ShopTop></ShopTop>
+              </v-flex>
+            </v-layout>
           </iu-panel>
         </v-flex>
         <v-flex xs12>
-          <iu-panel flat dark :bgImg="topBgImg">
-              <v-layout row
-                wrap
-                justify-center>
-                <v-flex xs12
-                  md10
-                  lg8>
-                  <ShopCenter></ShopCenter>
-                </v-flex>
-              </v-layout>
-            </iu-panel>
+          <v-divider class="cyan darken-1"></v-divider>
+        </v-flex>
+        <v-flex xs12>
+          <iu-panel flat
+            dark
+            :bgImg="topBgImg">
+            <v-layout row
+              wrap
+              justify-center>
+              <v-flex v-bind="{ [`xs${xsflex}`]: true, [`sm${smflex}`]: true, [`md${mdflex}`]: true, [`lg${lgflex}`]: true, [`xl${xlflex}`]: true }">
+                <ShopCenter></ShopCenter>
+              </v-flex>
+            </v-layout>
+          </iu-panel>
         </v-flex>
         <v-flex xs12>
           <iu-panel flat>
             <v-layout row
               wrap
               justify-center>
-              <v-flex xs12
-                md10
-                lg8>
+              <v-flex v-bind="{ [`xs${xsflex}`]: true, [`sm${smflex}`]: true, [`md${mdflex}`]: true, [`lg${lgflex}`]: true, [`xl${xlflex}`]: true }">
                 <ShopBottom></ShopBottom>
               </v-flex>
             </v-layout>
           </iu-panel>
         </v-flex>
-        <v-flex xs12
-          md10
-          lg8>
+        <v-flex v-bind="{ [`xs${xsflex}`]: true, [`sm${smflex}`]: true, [`md${mdflex}`]: true, [`lg${lgflex}`]: true, [`xl${xlflex}`]: true }">
           <ShopContent></ShopContent>
         </v-flex>
       </v-layout>
@@ -57,7 +56,8 @@
       v-model="snackbar"
       color="green darken-2">
       {{ snackbarText }}
-      <v-btn dark flat
+      <v-btn dark
+        flat
         @click.native="snackbar = false">확인</v-btn>
     </v-snackbar>
   </v-app>
@@ -75,6 +75,11 @@ import ShopContent from './components/ShopContent'
 export default {
   data() {
     return {
+      xsflex: 12,
+      smflex: 12,
+      mdflex: 12,
+      lgflex: 11,
+      xlflex: 10,
       label: '로딩중.....',
       topBgImg: 'src/assets/bg2.svg'
     }
@@ -155,12 +160,17 @@ export default {
   padding-right: 5px !important;
 }
 
+a.tabs__item.tabs__item--active {
+  color: darkcyan !important;
+  font-size: 13px !important;
+  font-weight: bold !important;
+}
+
 .tabs__item {
   font-weight: bold !important;
 }
 
-.tabs__item--active {
-  font-size: 13px !important;
-  font-weight: bold !important;
+a.tabs__item:hover {
+  color: darkcyan !important;
 }
 </style>
