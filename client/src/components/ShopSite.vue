@@ -27,17 +27,20 @@
 export default {
   data() {
     return {
-      selected: []
+      selected: ['all']
     }
   },
   watch: {
     selected() {
-      if (this.selected.findIndex(x => x === 'all') > 0) {
-        this.selected = ['all']
-      }
-      if (this.selected.findIndex(x => x !== 'all') > 0) {
-        this.selected = this.selected.filter(x => x !== 'all')
-      }
+      // if (this.selected.findIndex(x => x === 'all') >= 0) {
+      //   this.selected = ['all']
+      // }
+      // if (this.selected.findIndex(x => x !== 'all') >= 0) {
+      //   this.selected = this.selected.filter(x => x !== 'all')
+      // }
+      // if (this.selected.length === 0) {
+      //   this.selected = ['all']
+      // }
       this.$store.commit('setSite', this.selected)
     }
   }

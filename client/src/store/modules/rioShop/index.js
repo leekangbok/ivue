@@ -13,7 +13,15 @@ const mutations = {
     })
   },
   setSite(state, site = ['all']) {
-    state.site = site
+    if (site.findIndex(x => x === 'all') >= 0) {
+      state.site = ['all']
+    }
+    if (site.findIndex(x => x !== 'all') >= 0) {
+      state.site = site.filter(x => x !== 'all')
+    }
+    if (state.site.length === 0) {
+      state.site = ['all']
+    }
   }
 }
 
@@ -21,8 +29,8 @@ const getters = {
   [types.GET_RIOSHOP_PRODUCT_ITEMS](state, getters) {
     return state.productItems.filter(({ site = 'all' }) => {
       if (
-        state.site.findIndex(x => x === 'all') > 0 ||
-        state.site.findIndex(x => x === site)
+        state.site.findIndex(x => x === 'all') >= 0 ||
+        state.site.findIndex(x => x === site) >= 0
       ) {
         return true
       }
