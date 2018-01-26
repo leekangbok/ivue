@@ -1,7 +1,7 @@
 <template>
   <v-card>
     <v-card-media :src="imgSrc"
-      height="300px">
+      :height="`${height}px`">
       <v-container fill-height
         fluid>
         <v-layout fill-height>
@@ -50,7 +50,20 @@ import { mapMutations } from 'vuex'
 import types from '@/store/mutation-types'
 
 export default {
-  props: ['title', 'imgSrc'],
+  props: {
+    title: {
+      type: String,
+      default: ''
+    },
+    imgSrc: {
+      type: String,
+      default: ''
+    },
+    height: {
+      type: [String, Number],
+      default: '300'
+    }
+  },
   methods: {
     ...mapMutations({
       onCart: types.CART_ITEMS

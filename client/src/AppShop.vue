@@ -7,7 +7,7 @@
         <v-flex xs12>
           <iu-panel flat
             dark
-            :bgImg="topBgImg">
+            :bgImg="bgImg">
             <v-layout row
               wrap
               justify-center>
@@ -23,7 +23,7 @@
         <v-flex xs12>
           <iu-panel flat
             dark
-            :bgImg="topBgImg">
+            :bgImg="bgImg">
             <v-layout row
               wrap
               justify-center>
@@ -45,7 +45,10 @@
           </iu-panel>
         </v-flex>
         <v-flex v-bind="{ [`xs${xsflex}`]: true, [`sm${smflex}`]: true, [`md${mdflex}`]: true, [`lg${lgflex}`]: true, [`xl${xlflex}`]: true }">
-          <ShopContent></ShopContent>
+          <v-container fluid grid-list-md>
+            <!-- <router-view></router-view> -->
+            <ShopContent></ShopContent>
+          </v-container>
         </v-flex>
       </v-layout>
       <Loading :show="show"
@@ -79,9 +82,9 @@ export default {
       smflex: 12,
       mdflex: 12,
       lgflex: 11,
-      xlflex: 10,
-      label: '로딩중.....',
-      topBgImg: 'src/assets/bg2.svg'
+      xlflex: 6,
+      label: '상품을 불러오고 있습니다...',
+      bgImg: 'static/images/navbgimage.svg'
     }
   },
   components: {

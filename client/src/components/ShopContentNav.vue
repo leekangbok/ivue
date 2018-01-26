@@ -1,6 +1,6 @@
 <template>
 <v-card>
-  <v-navigation-drawer height="353px" permanent id="shop-nav-drawer">
+  <v-navigation-drawer v-bind="$attrs" :height="`${height}px`" permanent id="shop-nav-drawer">
       <v-list dense>
         <v-list-tile>
           <v-list-tile-action>
@@ -60,6 +60,12 @@
 
 <script>
 export default {
+  props: {
+    height: {
+      type: [String, Number],
+      default: '300'
+    }
+  },
   data() {
     return {
       mini: false

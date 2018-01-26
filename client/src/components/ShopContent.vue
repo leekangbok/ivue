@@ -1,19 +1,24 @@
 <template>
-  <v-container fluid grid-list-lg>
     <v-layout row
       wrap
       justify-left>
+      <!-- <v-flex xs3>
+        <ShopContentNav></ShopContentNav>
+      </v-flex>
+      <v-flex xs9>
+      <v-layout row wrap justify-left> -->
       <v-flex v-bind="{ [`sm${item.flex}`]: true, 'xs12': true }"
         v-for="(item, index) in items"
         :key="index">
         <component :is="item.component"
-          v-if="item.component"></component>
+          v-if="item.component" :height="height + 52"></component>
         <ShopItem :imgSrc="item.src"
-          :title="item.title"
+          :title="item.title" :height="height"
           v-else></ShopItem>
       </v-flex>
+      <!-- </v-layout>
+      </v-flex> -->
     </v-layout>
-  </v-container>
 </template>
 
 <script>
@@ -25,6 +30,7 @@ import ShopItem from './ShopItem'
 export default {
   data() {
     return {
+      height: 300
     }
   },
   components: {
@@ -36,12 +42,7 @@ export default {
       productItems: types.GET_RIOSHOP_PRODUCT_ITEMS
     }),
     items() {
-      let items = this.productItems.slice()
-      items.unshift({
-        component: ShopContentNav,
-        flex: 3
-      })
-      return items
+      return [{ component: ShopContentNav, flex: 3 }, ...this.productItems]
     }
   }
 }
