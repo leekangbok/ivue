@@ -1,23 +1,45 @@
 <template>
-  <iu-panel flat
+  <!-- <iu-panel flat
         slot="link"
-        color="transparent">
+        color="transparent"> -->
     <v-layout justify-center>
-      <v-card-actions>
+      <v-flex xs6>
+      <v-card flat color="transparent">
+          <v-card-actions>
+            <v-switch label="전체" v-model="selected" value="all"></v-switch>
+            <v-switch label="이덴트" v-model="selected" value="edent"></v-switch>
+            <v-switch label="K덴탈" v-model="selected" value="kdental"></v-switch>
+          </v-card-actions>
+        </v-card>
+      </v-flex>
+      <!-- <v-card-actions>
     <v-btn dark color="primary" @click="$store.commit('setSite')">전체보기</v-btn>
     <span>|</span>
     <v-btn dark color="primary" @click="$store.commit('setSite', 'edent')">이덴트</v-btn>
             <span>|</span>
     <v-btn dark color="primary" @click="$store.commit('setSite', 'kdental')">K덴탈</v-btn>
-      </v-card-actions>
+      </v-card-actions> -->
     </v-layout>
-  </iu-panel>
+  <!-- </iu-panel> -->
 </template>
 
 <script>
 export default {
   data() {
-    return {}
+    return {
+      selected: []
+    }
+  },
+  watch: {
+    selected() {
+      if (this.selected.findIndex(x => x === 'all') > 0) {
+        this.selected = ['all']
+      }
+      if (this.selected.findIndex(x => x !== 'all') > 0) {
+        this.selected = this.selected.filter(x => x !== 'all')
+      }
+      this.$store.commit('setSite', this.selected)
+    }
   }
 }
 </script>

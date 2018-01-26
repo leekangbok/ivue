@@ -3,7 +3,7 @@ import api from '../../api'
 
 const state = {
   productItems: [],
-  site: ''
+  site: ['all']
 }
 
 const mutations = {
@@ -12,15 +12,18 @@ const mutations = {
       return Object.assign(item, { flex: 3 })
     })
   },
-  setSite(state, site = '') {
+  setSite(state, site = ['all']) {
     state.site = site
   }
 }
 
 const getters = {
   [types.GET_RIOSHOP_PRODUCT_ITEMS](state, getters) {
-    return state.productItems.filter(({ site = '' }) => {
-      if (!state.site || state.site === site) {
+    return state.productItems.filter(({ site = 'all' }) => {
+      if (
+        state.site.findIndex(x => x === 'all') > 0 ||
+        state.site.findIndex(x => x === site)
+      ) {
         return true
       }
       return false
