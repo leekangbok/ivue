@@ -13,15 +13,7 @@ const mutations = {
     })
   },
   setSite(state, site = ['all']) {
-    if (site.findIndex(x => x === 'all') >= 0) {
-      state.site = ['all']
-    }
-    if (site.findIndex(x => x !== 'all') >= 0) {
-      state.site = site.filter(x => x !== 'all')
-    }
-    if (state.site.length === 0) {
-      state.site = ['all']
-    }
+    state.site = site
   }
 }
 
@@ -44,8 +36,7 @@ const actions = {
     commit(types.SHOW_LOADING, true)
     return api.request(
       'get',
-      '/api/rio/shop/items',
-      {
+      '/api/rio/shop/items', {
         params: { product: query }
       },
       response => {
