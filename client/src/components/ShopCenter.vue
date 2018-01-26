@@ -1,7 +1,6 @@
 <template>
   <div>
     <iu-toolbar-nav :searchBox="searchBox"
-      hiddenTitle
       @onSearch="onSearch">
       <v-icon large
         slot="title">list</v-icon>

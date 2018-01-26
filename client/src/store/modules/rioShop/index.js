@@ -2,21 +2,29 @@ import types from '../../mutation-types'
 import api from '../../api'
 
 const state = {
-  productItems: []
+  productItems: [],
+  site: ''
 }
 
 const mutations = {
   setProductItems(state, data) {
-    console.log(data)
     state.productItems = data.map(item => {
-      return item
+      return Object.assign(item, { flex: 3 })
     })
+  },
+  setSite(state, site = '') {
+    state.site = site
   }
 }
 
 const getters = {
   [types.GET_RIOSHOP_PRODUCT_ITEMS](state, getters) {
-    return state.productItems
+    return state.productItems.filter(({ site = '' }) => {
+      if (!state.site || state.site === site) {
+        return true
+      }
+      return false
+    })
   }
 }
 
@@ -30,6 +38,7 @@ const actions = {
         params: { product: query }
       },
       response => {
+        commit('setSite')
         commit('setProductItems', response.data)
         commit(types.SHOW_LOADING, false)
       },

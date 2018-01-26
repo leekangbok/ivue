@@ -1,7 +1,7 @@
 <template>
     <v-layout row
       wrap
-      justify-left>
+      justify-left align-center>
       <!-- <v-flex xs3>
         <ShopContentNav></ShopContentNav>
       </v-flex>
@@ -11,7 +11,7 @@
         v-for="(item, index) in items"
         :key="index">
         <component :is="item.component"
-          v-if="item.component" :height="height + 52"></component>
+          v-if="item.component" v-bind="item.attrs"></component>
         <ShopItem :imgSrc="item.src"
           :title="item.title" :height="height"
           v-else></ShopItem>
@@ -26,6 +26,7 @@ import { mapGetters } from 'vuex'
 import types from '@/store/mutation-types'
 import ShopContentNav from './ShopContentNav'
 import ShopItem from './ShopItem'
+import ShopSite from './ShopSite'
 
 export default {
   data() {
@@ -35,14 +36,19 @@ export default {
   },
   components: {
     ShopContentNav,
-    ShopItem
+    ShopItem,
+    ShopSite
   },
   computed: {
     ...mapGetters({
       productItems: types.GET_RIOSHOP_PRODUCT_ITEMS
     }),
     items() {
-      return [{ component: ShopContentNav, flex: 3 }, ...this.productItems]
+      return [
+        { component: ShopContentNav, flex: 3, attrs: {} },
+        { component: ShopSite, flex: 9 },
+        ...this.productItems
+      ]
     }
   }
 }

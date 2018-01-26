@@ -10,7 +10,7 @@ def parse(text):
     for x in (e for e in f if e['name'].startswith('frmProduct_')):
         products.append({
             'src' : 'http://www.kdental.co.kr{}'.format(x.find_all('a')[0].find('img')['src']),
-            'flex': 3
+            'site': 'kdental'
         })
     return products
 
