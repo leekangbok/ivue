@@ -5,6 +5,7 @@ from twisted.internet import defer
 from server.api.utils import transform_tw_req
 from server.misc.utils import flatten
 from .edent import get_products as get_edent_products
+from .kdental import get_products as get_kdental_products
 
 
 class Service:
@@ -18,7 +19,7 @@ class Service:
         dl = list()
 
         dl.append(get_edent_products(product))
-        # dl.append(get_kdental_prices(request, product))
+        dl.append(get_kdental_products(product))
 
         dlist = defer.DeferredList(dl, consumeErrors=True)
 
