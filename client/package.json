@@ -14,7 +14,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "axios": "^0.17.1",
+    "axios": "^0.21.1",
     "c3": "^0.4.18",
     "jshint": "^2.9.5",
     "lodash": "^4.17.4",
